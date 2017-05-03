@@ -237,7 +237,7 @@ li{
     ================*/
 
     .page-1{
-        background-image: url('../image/portrait_small.jpg');
+        background-image: url('../image/portrait.png');
         background-size: cover;
         background-attachment: fixed;
     }
