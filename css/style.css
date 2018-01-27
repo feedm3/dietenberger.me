@@ -116,7 +116,7 @@ li {
 }
 
 .face {
-    background-image: url('../image/portrait.png');
+    background-image: url('../image/portrait_compressed.png');
     background-position: center bottom;
     background-size: contain;
     background-repeat: no-repeat;
