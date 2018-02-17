@@ -112,6 +112,7 @@ li {
     justify-content: center;
     flex: 1 0 220px;
     text-align: center;
+    width: 100%;
 }
 
 .page-1-container__item-title h3 {
