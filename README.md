@@ -1,8 +1,5 @@
 # Personal website
 
-## Credits
+This is my personal website build with plain old HTML, CSS and JS.
 
-Following people inspired my with this page:
-
-- [Hamsa Alboukhari](http://hamsaalboukhari.co/)
-- [Ben Lakey](http://benlakey.com/)
+[http://dietenberger.me](http://dietenberger.me)
