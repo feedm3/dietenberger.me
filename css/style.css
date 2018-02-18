@@ -62,7 +62,6 @@ h3, li {
 }
 
 li {
-    margin-right: 24px;
     font-size: 14px;
     color: #FFFFFF;
     line-height: 20px;
@@ -131,50 +130,44 @@ li {
     height: 100%;
     justify-content: space-between;
     flex-wrap: nowrap;
-    margin-left: 96px;
-    margin-right: 96px;
+    padding: 62px 120px;
 }
 
-.top {
+.page-2-container__top {
     display: flex;
     flex-direction: row;
 }
 
-.intro {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
+.page-2-container__top-left {
+    width: 66%;
 }
 
-.bottom {
+.page-2-container__top-right {
+    width: 33%;
+    margin-left: 62px;
+}
+
+.page-2-container__top-right-projects {
+    margin-top: 44px;
+}
+
+.page-2-container__bottom {
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
-.inlineList {
+.page-2-container__bottom-list {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.left {
-    display: flex;
-    width: 66.66666%;
-    margin-right: 48px;
-    margin-top: 96px;
-
+.page-2-container__bottom-list li {
+    margin-right: 24px;
 }
 
-.right {
-    display: flex;
-    width: 33.333333%;
-    margin-left: 48px;
-    margin-top: 96px;
-    margin-right: 48px;
-}
 
 /*========== Hover ==========*/
 .hvr-sweep-to-top {
@@ -222,6 +215,13 @@ li {
 
 /*========== Mobile adaptions ==========*/
 @media (max-width: 960px) {
+
+    /*========== General ==========*/
+    p {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
     /*========== Page 1 ==========*/
     .page-1-container {
         flex-direction: column;
@@ -257,56 +257,37 @@ li {
     .page-2-container {
         flex-direction: column;
         align-items: center;
-        margin-left: 16px;
-        margin-right: 16px;
+        padding: 24px 36px;
     }
 
-    .top {
+    .page-2-container__top {
         display: flex;
         flex-direction: column;
     }
 
-    .left, .right {
-        display: flex;
-        justify-content: flex-start;
+    .page-2-container__top-left, .page-2-container__top-right {
         width: 100%;
         margin-left: 0;
     }
 
-    .left {
-        margin-top: 0;
-        margin-bottom: 48px;
+    .page-2-container__top-left {
+        margin-bottom: 0;
+        text-align: center;
     }
 
-    .right {
-        margin-top: 0;
-        margin-bottom: 48px;
+    .page-2-container__top-right {
+        margin-top: 8px;
+        margin-bottom: 0;
+        text-align: center;
     }
 
-    .bottom {
-        margin-top: 0;
-        width: 100%;
-    }
-
-    .intro {
-        margin-bottom: 48px;
-        margin-top: 48px;
-    }
-
-    .Ican {
+    .page-2-container__bottom {
         margin-top: 20px;
+        text-align: center;
     }
 
-    p {
-        font-size: 18px;
-        line-height: 28px;
-    }
-
-    .inlineList {
+    .page-2-container__bottom-list {
         display: flex;
         flex-direction: column;
-    }
-
-    .hvr-sweep-to-top {
     }
 }
