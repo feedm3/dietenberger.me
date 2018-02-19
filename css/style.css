@@ -290,4 +290,8 @@ li {
         display: flex;
         flex-direction: column;
     }
+
+    .page-2-container__bottom-list li {
+        margin-right: 0;
+    }
 }
