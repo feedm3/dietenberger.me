@@ -214,7 +214,7 @@ li {
 }
 
 /*========== Mobile adaptions ==========*/
-@media (max-width: 960px) {
+@media (max-width: 767px) {
 
     /*========== General ==========*/
     p {

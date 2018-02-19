@@ -6,7 +6,7 @@
  * @returns {boolean} true if not on mobile (like tablet or desktop)
  */
 function isNotMobile() {
-    return !window.matchMedia("(max-width: 960px)").matches
+    return !window.matchMedia("(max-width: 767px)").matches
 }
 
 /**
