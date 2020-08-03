@@ -97,7 +97,7 @@ li {
 }
 
 .page-1-container__item-face {
-    background: url('../image/portrait_compressed.png') no-repeat center bottom;
+    background: url('../image/portrait.webp') no-repeat center bottom;
     background-size: contain;
     height: 90%;
     flex: 1 0 400px;
