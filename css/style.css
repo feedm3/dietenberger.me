@@ -35,6 +35,7 @@ p {
     font-size: 30px;
     line-height: 44px;
     margin-top: 6px;
+    word-wrap: break-word;
 }
 
 a, a:visited {
