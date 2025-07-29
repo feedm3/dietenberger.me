@@ -48,6 +48,7 @@ export default function Home() {
                 href={'https://maps.app.goo.gl/LhDyAWfBpNCYnjqeA'}
                 target={'_blank'}
                 rel={'noopener noreferrer'}
+                title="Visit Kißlegg on Google Maps"
               >
                 Kißlegg, Germany
               </Link>
@@ -55,8 +56,7 @@ export default function Home() {
             </p>
             <div className="flex gap-4 mt-6">
               <Button
-                variant="outline"
-                className="rounded-full px-4 py-2 bg-transparent flex items-center gap-2"
+                className="rounded-full px-4 py-2 flex items-center gap-2"
                 asChild={true}
               >
                 <Link
