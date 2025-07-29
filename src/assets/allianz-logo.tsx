@@ -6,11 +6,9 @@ export const AllianzLogo = (props: SVGProps<SVGSVGElement>) => (
     viewBox="0 0 130 35"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    role="img"
-    aria-labelledby="allianz-logo-title"
+    role="graphics-symbol"
     {...props}
   >
-    <title id="allianz-logo-title">Allianz</title>
     <path
       fillRule="evenodd"
       clipRule="evenodd"

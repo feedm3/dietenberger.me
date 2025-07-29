@@ -5,11 +5,9 @@ export const ZeissLogo = (props: SVGProps<SVGSVGElement>) => (
     height="100"
     viewBox="0 0 566.929 566.929"
     xmlns="http://www.w3.org/2000/svg"
-    role="img"
-    aria-labelledby="zeiss-logo-title"
+    role="graphics-symbol"
     {...props}
   >
-    <title id="zeiss-logo-title">ZEISS</title>
     <g>
       <path
         fill="currentColor"

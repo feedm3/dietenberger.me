@@ -6,11 +6,9 @@ export const SapLogo = (props: SVGProps<SVGSVGElement>) => (
     fill="currentColor"
     viewBox="0 0 91 45"
     xmlns="http://www.w3.org/2000/svg"
-    role="img"
-    aria-labelledby="sap-logo-title"
+    role="graphics-symbol"
     {...props}
   >
-    <title id="sap-logo-title">SAP</title>
     <g xmlns="http://www.w3.org/2000/svg">
       <path
         className="st0"

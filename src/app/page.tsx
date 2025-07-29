@@ -43,7 +43,16 @@ export default function Home() {
               of experience leading large-scale enterprise web projects. A
               pragmatic problem solver and team player, passionate about
               building high-performing teams and delivering impactful solutions.
-              Based in Kißlegg, Germany.
+              <br />
+              Based in{' '}
+              <Link
+                href={'https://maps.app.goo.gl/LhDyAWfBpNCYnjqeA'}
+                target={'_blank'}
+                rel={'noopener noreferrer'}
+              >
+                Kißlegg, Germany
+              </Link>
+              .
             </p>
             <div className="flex gap-4 mt-6">
               <Button
@@ -55,10 +64,9 @@ export default function Home() {
                   href="mailto:fabian@dietenberger.me"
                   target="_blank"
                   rel="noopener noreferrer"
-                  title={'Send me an email'}
+                  title="Send me an email"
                 >
-                  <Mail className="h-5 w-5" />
-                  <span>Let's connect</span>
+                  <Mail className="h-5 w-5" aria-hidden="true" />
                 </Link>
               </Button>
               <Button
@@ -71,10 +79,9 @@ export default function Home() {
                   href="https://linkedin.com/in/fabiandietenberger"
                   target="_blank"
                   rel="noopener noreferrer"
-                  title={'Go to my LinkedIn profile'}
+                  title="Visit my LinkedIn profile"
                 >
-                  <LinkedInIcon className="h-5 w-5"></LinkedInIcon>
-                  <span className="sr-only">LinkedIn</span>
+                  <LinkedInIcon className="h-5 w-5" aria-hidden="true" />
                 </Link>
               </Button>
               <Button
@@ -87,10 +94,9 @@ export default function Home() {
                   href="https://github.com/feedm3"
                   target="_blank"
                   rel="noopener noreferrer"
-                  title={'Go to my Github profile'}
+                  title="Visit my GitHub profile"
                 >
-                  <GithubLogo className="h-5 w-5" />
-                  <span className="sr-only">GitHub</span>
+                  <GithubLogo className="h-5 w-5" aria-hidden="true" />
                 </Link>
               </Button>
             </div>
@@ -105,61 +111,63 @@ export default function Home() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
               <SkillsCard
-                title={'Frontend'}
+                title={'Frontend Development'}
                 skills={[
-                  'TypeScript',
-                  'React',
-                  'Next.js',
-                  'Tailwind, styled-components',
-                  'Module Federation',
+                  'Modern Web Applications (React, TypeScript)',
+                  'Next.js & Performance Optimization',
+                  'Responsive Design & UI/UX Implementation',
+                  'Component Libraries & Design Systems',
+                  'Large-Scale Application Architecture',
                 ]}
               />
               <SkillsCard
-                title={'Backend'}
+                title={'Backend & Architecture'}
                 skills={[
-                  'Node.js (Nest, TSOA)',
-                  'Java (Spring Boot)',
-                  'GraphQL',
-                  'Relational Databases (PostgreSQL, MySQL)',
-                  'Microservices Architecture',
+                  'Enterprise API Development (Node.js, Java)',
+                  'Database Design & Optimization',
+                  'Microservices & Scalable Architecture',
+                  'System Integration & Third-Party APIs',
+                  'Performance & Security Best Practices',
                 ]}
               ></SkillsCard>
               <SkillsCard
-                title={'DevOps & Cloud'}
+                title={'Cloud & Infrastructure'}
                 skills={[
-                  'Github Actions, Azure DevOps',
-                  'Azure, AWS, Firebase, Digital Ocean',
-                  'Docker, Kubernetes',
-                  'Serverless',
+                  'Cloud Platform Management (Azure, AWS)',
+                  'CI/CD Pipeline Implementation',
+                  'Containerization & Deployment (Docker)',
+                  'Automated Testing & Quality Assurance',
+                  'Infrastructure Cost Optimization',
                 ]}
               />
               <SkillsCard
-                title={'AI'}
+                title={'AI & Innovation'}
                 skills={[
-                  'AI Application Development',
-                  'Agentic AI Systems',
-                  'Prompt Engineering',
-                  'AI SDKs & Frameworks',
+                  'AI-Powered Application Development',
+                  'Business Process Automation',
+                  'Intelligent System Integration',
+                  'Emerging Technology Evaluation',
+                  'Innovation Strategy & Implementation',
                 ]}
               />
               <SkillsCard
-                title="Leadership & Process"
+                title="Team Leadership & Management"
                 skills={[
-                  'Engineering Management',
-                  'Agile (Scrum, SAFe)',
-                  'Team Mentoring & Growth',
+                  'Engineering Team Leadership',
+                  'Agile Project Management & Delivery',
+                  'Cross-Functional Team Collaboration',
+                  'Talent Development & Mentoring',
+                  'Stakeholder Communication & Reporting',
+                ]}
+              ></SkillsCard>
+              <SkillsCard
+                title={'Business & Operations'}
+                skills={[
                   'Client Relationship Management',
-                  'Hiring & Onboarding',
-                ]}
-              ></SkillsCard>
-              <SkillsCard
-                title={'Tools & Automation'}
-                skills={[
-                  'SEO Optimization',
-                  'Web Analytics',
-                  'Performance Monitoring',
-                  'Content Management (AEM, Contentful)',
-                  'Task Automation (Windmill)',
+                  'Budget Planning & Resource Allocation',
+                  'Technical Requirements Analysis',
+                  'Performance Metrics & Analytics',
+                  'Risk Assessment & Mitigation',
                 ]}
               />
             </div>
@@ -175,66 +183,79 @@ export default function Home() {
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-8 gap-y-12 mt-12 items-center justify-center">
               <Link
                 href="https://audi.de"
-                target={'_blank'}
-                rel={'noopener noreferrer'}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Visit Audi's website"
               >
-                <AudiLogo className="p-2 w-full" />
+                <AudiLogo className="p-2 w-full" aria-hidden="true" />
               </Link>
               <Link
                 href="https://fcbayern.com"
-                target={'_blank'}
-                rel={'noopener noreferrer'}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Visit FC Bayern Munich's website"
               >
-                <FcBayernLogo className="p-2 w-full" />
+                <FcBayernLogo className="p-2 w-full" aria-hidden="true" />
+                <span className="sr-only">FC Bayern Munich</span>
               </Link>
               <Link
                 href="https://zeiss.de"
-                target={'_blank'}
-                rel={'noopener noreferrer'}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Visit ZEISS's website"
               >
-                <ZeissLogo className="p-2 w-full" />
+                <ZeissLogo className="p-2 w-full" aria-hidden="true" />
+                <span className="sr-only">ZEISS</span>
               </Link>
               <Link
                 href="https://allianz.de"
-                target={'_blank'}
-                rel={'noopener noreferrer'}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Visit Allianz's website"
               >
-                <AllianzLogo className="p-2 w-full" />
+                <AllianzLogo className="p-2 w-full" aria-hidden="true" />
+                <span className="sr-only">Allianz</span>
               </Link>
               <Link
                 href="https://sap.com"
-                target={'_blank'}
-                rel={'noopener noreferrer'}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Visit SAP's website"
               >
-                <SapLogo className="p-2 w-full" />
+                <SapLogo className="p-2 w-full" aria-hidden="true" />
+                <span className="sr-only">SAP</span>
               </Link>
               <Link
                 href="https://bmw.de"
-                target={'_blank'}
-                rel={'noopener noreferrer'}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Visit BMW's website"
               >
-                <BmwLogo className="p-2 w-full" />
+                <BmwLogo className="p-2 w-full" aria-hidden="true" />
+                <span className="sr-only">BMW</span>
               </Link>
               <Link
                 href="https://accenture.com"
-                target={'_blank'}
-                rel={'noopener noreferrer'}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Visit Accenture's website"
               >
-                <AccentureLogo className="p-2 w-full" />
+                <AccentureLogo className="p-2 w-full" aria-hidden="true" />
+                <span className="sr-only">Accenture</span>
               </Link>
               <Link
                 href="https://adac-motorsport.de"
-                target={'_blank'}
-                rel={'noopener noreferrer'}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Visit ADAC Motorsport's website"
               >
-                <AdacMotorsportLogo className="p-2 w-full" />
+                <AdacMotorsportLogo className="p-2 w-full" aria-hidden="true" />
+                <span className="sr-only">ADAC Motorsport</span>
               </Link>
             </div>
           </div>
         </section>
       </main>
-
-      {/* Footer */}
       <footer className="container mx-auto flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
         <p className="text-xs text-muted-foreground">
           &copy; {new Date().getFullYear()} Fabian Dietenberger. All rights
@@ -246,6 +267,7 @@ export default function Home() {
             className="text-xs hover:underline underline-offset-4"
             target="_blank"
             rel="noopener noreferrer"
+            title="Visit my LinkedIn profile"
           >
             LinkedIn
           </Link>
@@ -254,6 +276,7 @@ export default function Home() {
             className="text-xs hover:underline underline-offset-4"
             target="_blank"
             rel="noopener noreferrer"
+            title="Visit my GitHub profile"
           >
             GitHub
           </Link>
