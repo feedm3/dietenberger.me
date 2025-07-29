@@ -29,6 +29,8 @@ export default function Home() {
               objectFit={'cover'}
               alt="Fabian Dietenberger portrait"
               className="rounded-full object-cover border-4 border-primary shadow-lg"
+              priority
+              placeholder="blur"
             />
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none">
               Fabian Dietenberger
@@ -37,10 +39,11 @@ export default function Home() {
               Engineering Manager | Senior Software Developer
             </p>
             <p className="max-w-[800px] text-lg text-gray-700 dark:text-gray-300">
-              Engineering Manager and Senior Software Developer with +10 years
-              of experience leading large-scale enterprise projects. A pragmatic
-              problem solver and team player, passionate about building
-              high-performing teams and delivering impactful solutions.
+              Engineering Manager and Senior Software Developer with 10+ years
+              of experience leading large-scale enterprise web projects. A
+              pragmatic problem solver and team player, passionate about
+              building high-performing teams and delivering impactful solutions.
+              Based in Kißlegg, Germany.
             </p>
             <div className="flex gap-4 mt-6">
               <Button
@@ -115,7 +118,7 @@ export default function Home() {
                 title={'Backend'}
                 skills={[
                   'Node.js (Nest, TSOA)',
-                  'Javva (Spring Boot)',
+                  'Java (Spring Boot)',
                   'GraphQL',
                   'Relational Databases (PostgreSQL, MySQL)',
                   'Microservices Architecture',
