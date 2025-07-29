@@ -20,13 +20,12 @@ export default function Home() {
     <div>
       <main className="flex flex-col min-h-screen bg-background text-foreground">
         {/* Hero Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 text-center bg-linear-to-b from-gray-50 to-white dark:from-gray-950 dark:to-black">
+        <section className="w-full py-12 md:py-24 lg:py-32 text-center bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-black">
           <div className="container mx-auto px-4 md:px-6 flex flex-col items-center space-y-6">
             <Image
               src={ProfilePicture}
               width={200}
               height={200}
-              objectFit={'cover'}
               alt="Fabian Dietenberger portrait"
               className="rounded-full object-cover border-4 border-primary shadow-lg"
               priority
