@@ -43,50 +43,53 @@ export default function Home() {
               high-performing teams and delivering impactful solutions.
             </p>
             <div className="flex gap-4 mt-6">
-              <Link
-                href="mailto:fabian@dietenberger.me"
-                target="_blank"
-                rel="noopener noreferrer"
-                title={'Send me an email'}
+              <Button
+                variant="outline"
+                className="rounded-full px-4 py-2 bg-transparent flex items-center gap-2"
+                asChild={true}
               >
-                <Button
-                  variant="outline"
-                  className="rounded-full px-4 py-2 bg-transparent flex items-center gap-2"
+                <Link
+                  href="mailto:fabian@dietenberger.me"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={'Send me an email'}
                 >
                   <Mail className="h-5 w-5" />
                   <span>Let's connect</span>
-                </Button>
-              </Link>
-              <Link
-                href="https://linkedin.com/in/fabiandietenberger"
-                target="_blank"
-                rel="noopener noreferrer"
-                title={'Go to my LinkedIn profile'}
+                </Link>
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                className="rounded-full bg-transparent"
+                asChild={true}
               >
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="rounded-full bg-transparent"
+                <Link
+                  href="https://linkedin.com/in/fabiandietenberger"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={'Go to my LinkedIn profile'}
                 >
                   <LinkedInIcon className="h-5 w-5"></LinkedInIcon>
                   <span className="sr-only">LinkedIn</span>
-                </Button>
-              </Link>
-              <Link
-                href="https://github.com/feedm3"
-                target="_blank"
-                rel="noopener noreferrer"
-                title={'Go to my Github profile'}
+                </Link>
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                className="rounded-full bg-transparent"
+                asChild={true}
               >
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="rounded-full bg-transparent"
+                <Link
+                  href="https://github.com/feedm3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={'Go to my Github profile'}
                 >
                   <GithubLogo className="h-5 w-5" />
                   <span className="sr-only">GitHub</span>
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
           </div>
         </section>
