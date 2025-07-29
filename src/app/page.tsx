@@ -169,15 +169,63 @@ export default function Home() {
             <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl md:text-5xl">
               Clients I&apos;ve Worked With
             </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mt-12 items-center justify-center">
-              <AudiLogo className="p-2 w-full" />
-              <FcBayernLogo className="p-2 w-full" />
-              <ZeissLogo className="p-2 w-full" />
-              <AllianzLogo className="p-2 w-full" />
-              <SapLogo className="p-2 w-full" />
-              <BmwLogo className="p-2 w-full" />
-              <AccentureLogo className="p-2 w-full" />
-              <AdacMotorsportLogo className="p-2 w-full" />
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-8 gap-y-12 mt-12 items-center justify-center">
+              <Link
+                href="https://audi.de"
+                target={'_blank'}
+                rel={'noopener noreferrer'}
+              >
+                <AudiLogo className="p-2 w-full" />
+              </Link>
+              <Link
+                href="https://fcbayern.com"
+                target={'_blank'}
+                rel={'noopener noreferrer'}
+              >
+                <FcBayernLogo className="p-2 w-full" />
+              </Link>
+              <Link
+                href="https://zeiss.de"
+                target={'_blank'}
+                rel={'noopener noreferrer'}
+              >
+                <ZeissLogo className="p-2 w-full" />
+              </Link>
+              <Link
+                href="https://allianz.de"
+                target={'_blank'}
+                rel={'noopener noreferrer'}
+              >
+                <AllianzLogo className="p-2 w-full" />
+              </Link>
+              <Link
+                href="https://sap.com"
+                target={'_blank'}
+                rel={'noopener noreferrer'}
+              >
+                <SapLogo className="p-2 w-full" />
+              </Link>
+              <Link
+                href="https://bmw.de"
+                target={'_blank'}
+                rel={'noopener noreferrer'}
+              >
+                <BmwLogo className="p-2 w-full" />
+              </Link>
+              <Link
+                href="https://accenture.com"
+                target={'_blank'}
+                rel={'noopener noreferrer'}
+              >
+                <AccentureLogo className="p-2 w-full" />
+              </Link>
+              <Link
+                href="https://adac-motorsport.de"
+                target={'_blank'}
+                rel={'noopener noreferrer'}
+              >
+                <AdacMotorsportLogo className="p-2 w-full" />
+              </Link>
             </div>
           </div>
         </section>
