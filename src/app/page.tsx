@@ -67,6 +67,7 @@ export default function Home() {
                   title="Send me an email"
                 >
                   <Mail className="h-5 w-5" aria-hidden="true" />
+                  <span>Let's connect</span>
                 </Link>
               </Button>
               <Button
