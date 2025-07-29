@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github } from "lucide-react"
+import { Mail } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -6,13 +6,23 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 import ProfilePicture from '@/assets/profi-picture-laughing.jpg';
+import { LinkedInIcon } from "@/assets/linked-in-logo";
+import { GithubLogo } from "@/assets/github-logo";
+import { FcBayernLogo } from "@/assets/fc-bayern-logo";
+import { AudiLogo } from "@/assets/audi-logo";
+import { AllianzLogo } from "@/assets/allianz-logo";
+import { ZeissLogo } from "@/assets/zeiss-logo";
+import { AdacMotorsportLogo } from "@/assets/adac-motorsport-logo";
+import { BmwLogo } from "@/assets/bmw-logo";
+import { SapLogo } from "@/assets/sap-logo";
+import { AccentureLogo } from "@/assets/accenture-logo";
 
 export default function Home() {
   return (
     <div >
       <main className="flex flex-col min-h-screen bg-background text-foreground">
         {/* Hero Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 text-center bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-black">
+        <section className="w-full py-12 md:py-24 lg:py-32 text-center bg-linear-to-b from-gray-50 to-white dark:from-gray-950 dark:to-black">
           <div className="container mx-auto px-4 md:px-6 flex flex-col items-center space-y-6">
             <Image
               src={ProfilePicture}
@@ -25,7 +35,7 @@ export default function Home() {
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none">
               Fabian Dietenberger
             </h1>
-            <p className="max-w-[700px] text-muted-foreground md:text-xl">
+            <p className="text-muted-foreground md:text-xl">
               Engineering Manager | Senior Software Developer
             </p>
             <p className="max-w-[800px] text-lg text-gray-700 dark:text-gray-300">
@@ -34,21 +44,21 @@ export default function Home() {
               player, passionate about building high-performing teams and delivering impactful solutions.
             </p>
             <div className="flex gap-4 mt-6">
-              <Link href="mailto:fabian@dietenberger.me" target="_blank" rel="noopener noreferrer">
+            <Link href="mailto:fabian@dietenberger.me" target="_blank" rel="noopener noreferrer" title={"Send me an email"}>
                 <Button variant="outline" className="rounded-full px-4 py-2 bg-transparent flex items-center gap-2">
                   <Mail className="h-5 w-5" />
                   <span>Let's connect</span>
                 </Button>
               </Link>
-              <Link href="https://linkedin.com/in/fabiandietenberger" target="_blank" rel="noopener noreferrer">
+              <Link href="https://linkedin.com/in/fabiandietenberger" target="_blank" rel="noopener noreferrer" title={"Go to my LinkedIn profile"}>
                 <Button variant="outline" size="icon" className="rounded-full bg-transparent">
-                  <Linkedin className="h-5 w-5" />
+                  <LinkedInIcon className="h-5 w-5"></LinkedInIcon>
                   <span className="sr-only">LinkedIn</span>
                 </Button>
               </Link>
-              <Link href="https://github.com/feedm3" target="_blank" rel="noopener noreferrer">
+              <Link href="https://github.com/feedm3" target="_blank" rel="noopener noreferrer" title={"Go to my Github profile"}>
                 <Button variant="outline" size="icon" className="rounded-full bg-transparent">
-                  <Github className="h-5 w-5" />
+                  <GithubLogo className="h-5 w-5" />
                   <span className="sr-only">GitHub</span>
                 </Button>
               </Link>
@@ -123,29 +133,15 @@ export default function Home() {
             <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl md:text-5xl">
               Clients I&apos;ve Worked With
             </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 mt-12 items-center justify-center">
-              {[
-                { src: "/logos/satellytes.png", alt: "Satellytes Logo" },
-                { src: "/logos/zeiss.png", alt: "ZEISS Logo" },
-                { src: "/logos/fc-bayern.png", alt: "FC Bayern Logo" },
-                { src: "/logos/sinnerschrader-accenture.png", alt: "SinnerSchrader / Accenture Interactive Logo" },
-                { src: "/logos/audi.png", alt: "Audi Logo" },
-                { src: "/logos/adac.png", alt: "ADAC Logo" },
-                { src: "/logos/allianz.png", alt: "Allianz Logo" },
-                { src: "/logos/bmw.png", alt: "BMW Logo" },
-                { src: "/logos/ametras-l2b.png", alt: "Ametras L2B Logo" },
-                { src: "/logos/sap.png", alt: "SAP SE Logo" },
-              ].map((logo, index) => (
-                <div key={index} className="flex justify-center items-center p-2">
-                  <Image
-                    src={logo.src || "/placeholder.svg"}
-                    alt={logo.alt}
-                    width={120}
-                    height={60}
-                    className="object-contain max-h-[60px] w-auto"
-                  />
-                </div>
-              ))}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mt-12 items-center justify-center">
+              <ZeissLogo className="flex justify-center items-center p-2 w-full" />
+              <AudiLogo className="flex justify-center items-center p-2 w-full"/>
+              <AllianzLogo className="flex justify-center items-center p-2 w-full"/>
+              <SapLogo className="flex justify-center items-center p-2 w-full"/>
+              <BmwLogo className="flex justify-center items-center p-2 w-full"/>
+              <FcBayernLogo className="flex justify-center items-center p-2 w-full"/>
+              <AdacMotorsportLogo className="flex justify-center items-center p-2 w-full" />
+              <AccentureLogo className="flex justify-center items-center p-2 w-full" />
             </div>
           </div>
         </section>
