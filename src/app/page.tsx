@@ -133,7 +133,10 @@ export default function Home() {
                 title={'AI'}
                 skills={[
                   'AI Application Development',
-                  'Machine Learning Integration',
+                  'Agentic AI',
+                  'Prompt Engineering',
+                  'AI SDK',
+                  'Mastra',
                 ]}
               />
               <SkillsCard
@@ -167,14 +170,14 @@ export default function Home() {
               Clients I&apos;ve Worked With
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mt-12 items-center justify-center">
-              <AudiLogo className="flex justify-center items-center p-2 w-full" />
-              <FcBayernLogo className="flex justify-center items-center p-2 w-full" />
-              <ZeissLogo className="flex justify-center items-center p-2 w-full" />
-              <AllianzLogo className="flex justify-center items-center p-2 w-full" />
-              <SapLogo className="flex justify-center items-center p-2 w-full" />
-              <BmwLogo className="flex justify-center items-center p-2 w-full" />
-              <AccentureLogo className="flex justify-center items-center p-2 w-full" />
-              <AdacMotorsportLogo className="flex justify-center items-center p-2 w-full" />
+              <AudiLogo className="p-2 w-full" />
+              <FcBayernLogo className="p-2 w-full" />
+              <ZeissLogo className="p-2 w-full" />
+              <AllianzLogo className="p-2 w-full" />
+              <SapLogo className="p-2 w-full" />
+              <BmwLogo className="p-2 w-full" />
+              <AccentureLogo className="p-2 w-full" />
+              <AdacMotorsportLogo className="p-2 w-full" />
             </div>
           </div>
         </section>
