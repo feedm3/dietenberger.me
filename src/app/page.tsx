@@ -37,10 +37,10 @@ export default function Home() {
               Engineering Manager | Senior Software Developer
             </p>
             <p className="max-w-[800px] text-lg text-gray-700 dark:text-gray-300">
-              Experienced Engineering Manager and Senior Software Developer with
-              a proven track record in leading large-scale enterprise projects.
-              A pragmatic problem solver and team player, passionate about
-              building high-performing teams and delivering impactful solutions.
+              Engineering Manager and Senior Software Developer with +10 years
+              of experience leading large-scale enterprise projects. A pragmatic
+              problem solver and team player, passionate about building
+              high-performing teams and delivering impactful solutions.
             </p>
             <div className="flex gap-4 mt-6">
               <Link
@@ -106,7 +106,6 @@ export default function Home() {
                   'Next.js',
                   'Tailwind, styled-components',
                   'Module Federation',
-                  'zustand',
                 ]}
               />
               <SkillsCard
@@ -115,28 +114,26 @@ export default function Home() {
                   'Node.js (Nest, TSOA)',
                   'Javva (Spring Boot)',
                   'GraphQL',
-                  'Serverless',
+                  'Relational Databases (PostgreSQL, MySQL)',
                   'Microservices Architecture',
                 ]}
               ></SkillsCard>
               <SkillsCard
                 title={'DevOps & Cloud'}
                 skills={[
-                  'CI/CD Pipelines',
+                  'Github Actions, Azure DevOps',
+                  'Azure, AWS, Firebase, Digital Ocean',
                   'Docker, Kubernetes',
-                  'Azure, AWS, Firebase',
-                  'Turborepo, Monorepos',
-                  'Infrastructure as Code',
+                  'Serverless',
                 ]}
               />
               <SkillsCard
                 title={'AI'}
                 skills={[
                   'AI Application Development',
-                  'Agentic AI',
+                  'Agentic AI Systems',
                   'Prompt Engineering',
-                  'AI SDK',
-                  'Mastra',
+                  'AI SDKs & Frameworks',
                 ]}
               />
               <SkillsCard
@@ -147,16 +144,16 @@ export default function Home() {
                   'Team Mentoring & Growth',
                   'Client Relationship Management',
                   'Hiring & Onboarding',
-                  'Technical Strategy',
                 ]}
               ></SkillsCard>
               <SkillsCard
-                title={'Tools & Analytics'}
+                title={'Tools & Automation'}
                 skills={[
                   'SEO Optimization',
                   'Web Analytics',
                   'Performance Monitoring',
                   'Content Management (AEM, Contentful)',
+                  'Task Automation (Windmill)',
                 ]}
               />
             </div>
