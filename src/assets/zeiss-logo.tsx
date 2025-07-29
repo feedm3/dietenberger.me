@@ -2,14 +2,9 @@ import type { SVGProps } from 'react';
 
 export const ZeissLogo = (props: SVGProps<SVGSVGElement>) => (
   <svg
-    version="1.1"
-    id="svg1906"
-    xmlns="http://www.w3.org/2000/svg"
-    x="0px"
-    y="0px"
-    width="100px"
-    height="80"
+    height="100"
     viewBox="0 0 566.929 566.929"
+    xmlns="http://www.w3.org/2000/svg"
     role="img"
     aria-labelledby="zeiss-logo-title"
     {...props}

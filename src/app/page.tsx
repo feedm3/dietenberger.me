@@ -12,8 +12,8 @@ import { LinkedInIcon } from '@/assets/linked-in-logo';
 import ProfilePicture from '@/assets/profi-picture-laughing.jpg';
 import { SapLogo } from '@/assets/sap-logo';
 import { ZeissLogo } from '@/assets/zeiss-logo';
+import { SkillsCard } from '@/components/skills-card';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function Home() {
   return (
@@ -97,65 +97,65 @@ export default function Home() {
             <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl md:text-5xl">
               My Skills
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Core Technologies</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                    <li>TypeScript, JavaScript</li>
-                    <li>React, Next.js, Gatsby</li>
-                    <li>Node.js (Nest, TSOA)</li>
-                    <li>Java, Spring Boot</li>
-                    <li>GraphQL</li>
-                  </ul>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>DevOps & Cloud</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                    <li>
-                      CI/CD Pipelines (Azure DevOps, GitLab, Jenkins, GitHub
-                      Actions)
-                    </li>
-                    <li>Docker, Kubernetes</li>
-                    <li>
-                      Cloud Platforms (Azure, AWS, Netlify, Firebase,
-                      DigitalOcean)
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Methodologies & Other</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                    <li>Agile (Scrum, SAFe)</li>
-                    <li>SEO, Analytics</li>
-                    <li>Technical Leadership & Mentoring</li>
-                    <li>Client Relationship Management</li>
-                  </ul>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>AI & Machine Learning</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                    <li>AI Application Development</li>
-                    <li>Machine Learning Concepts</li>
-                    <li>Hackathon Winner (AI App)</li>
-                    <li>Serverless (for AI deployments)</li>
-                  </ul>
-                </CardContent>
-              </Card>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+              <SkillsCard
+                title={'Frontend'}
+                skills={[
+                  'TypeScript',
+                  'React',
+                  'Next.js',
+                  'Tailwind, styled-components',
+                  'Module Federation',
+                  'zustand',
+                ]}
+              />
+              <SkillsCard
+                title={'Backend'}
+                skills={[
+                  'Node.js (Nest, TSOA)',
+                  'Javva (Spring Boot)',
+                  'GraphQL',
+                  'Serverless',
+                  'Microservices Architecture',
+                ]}
+              ></SkillsCard>
+              <SkillsCard
+                title={'DevOps & Cloud'}
+                skills={[
+                  'CI/CD Pipelines',
+                  'Docker, Kubernetes',
+                  'Azure, AWS, Firebase',
+                  'Turborepo, Monorepos',
+                  'Infrastructure as Code',
+                ]}
+              />
+              <SkillsCard
+                title={'AI'}
+                skills={[
+                  'AI Application Development',
+                  'Machine Learning Integration',
+                ]}
+              />
+              <SkillsCard
+                title="Leadership & Process"
+                skills={[
+                  'Engineering Management',
+                  'Agile (Scrum, SAFe)',
+                  'Team Mentoring & Growth',
+                  'Client Relationship Management',
+                  'Hiring & Onboarding',
+                  'Technical Strategy',
+                ]}
+              ></SkillsCard>
+              <SkillsCard
+                title={'Tools & Analytics'}
+                skills={[
+                  'SEO Optimization',
+                  'Web Analytics',
+                  'Performance Monitoring',
+                  'Content Management (AEM, Contentful)',
+                ]}
+              />
             </div>
           </div>
         </section>
@@ -167,9 +167,9 @@ export default function Home() {
               Clients I&apos;ve Worked With
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mt-12 items-center justify-center">
-              <ZeissLogo className="flex justify-center items-center p-2 w-full" />
-              <FcBayernLogo className="flex justify-center items-center p-2 w-full" />
               <AudiLogo className="flex justify-center items-center p-2 w-full" />
+              <FcBayernLogo className="flex justify-center items-center p-2 w-full" />
+              <ZeissLogo className="flex justify-center items-center p-2 w-full" />
               <AllianzLogo className="flex justify-center items-center p-2 w-full" />
               <SapLogo className="flex justify-center items-center p-2 w-full" />
               <BmwLogo className="flex justify-center items-center p-2 w-full" />

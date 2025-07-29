@@ -2,9 +2,8 @@ import type { SVGProps } from 'react';
 
 export const AccentureLogo = (props: SVGProps<SVGSVGElement>) => (
   <svg
-    fill="#000000"
-    width="100"
-    height="100"
+    height="80"
+    fill="currentColor"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
     role="img"

@@ -2,7 +2,7 @@ import type { SVGProps } from 'react';
 
 export const AllianzLogo = (props: SVGProps<SVGSVGElement>) => (
   <svg
-    height="100"
+    height="80"
     viewBox="0 0 130 35"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

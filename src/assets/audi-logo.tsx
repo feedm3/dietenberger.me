@@ -2,7 +2,7 @@ import type { SVGProps } from 'react';
 
 export const AudiLogo = (props: SVGProps<SVGSVGElement>) => (
   <svg
-    height="60"
+    height="70"
     viewBox="0 0 100 35"
     xmlns="http://www.w3.org/2000/svg"
     role="img"

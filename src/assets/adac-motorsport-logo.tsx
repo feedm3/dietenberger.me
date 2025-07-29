@@ -2,9 +2,10 @@ import type { SVGProps } from 'react';
 
 export const AdacMotorsportLogo = (props: SVGProps<SVGSVGElement>) => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
+    height="80"
     fill="none"
     viewBox="0 0 324 92"
+    xmlns="http://www.w3.org/2000/svg"
     role="img"
     aria-labelledby="adac-motorsport-logo-title"
     {...props}
