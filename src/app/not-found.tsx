@@ -8,8 +8,8 @@ export default function NotFound() {
       <p className="mt-4 text-muted-foreground text-lg">
         This page could not be found.
       </p>
-      <Button asChild className="mt-8">
-        <Link href="/">Go back home</Link>
+      <Button nativeButton={false} render={<Link href="/" />} className="mt-8">
+        Go back home
       </Button>
     </main>
   );

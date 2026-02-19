@@ -41,48 +41,51 @@ export function HeroSection() {
         </p>
         <div className="flex gap-4 mt-6">
           <Button
+            nativeButton={false}
             className="rounded-full px-4 py-2 flex items-center gap-2"
-            asChild
+            render={
+              <Link
+                href="mailto:fabian@dietenberger.me"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Send me an email"
+              />
+            }
           >
-            <Link
-              href="mailto:fabian@dietenberger.me"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Send me an email"
-            >
-              <Mail className="h-5 w-5" aria-hidden="true" />
-              <span>Get in touch</span>
-            </Link>
+            <Mail className="h-5 w-5" aria-hidden="true" />
+            <span>Get in touch</span>
           </Button>
           <Button
+            nativeButton={false}
             variant="outline"
             size="icon"
             className="rounded-full bg-transparent"
-            asChild
+            render={
+              <Link
+                href="https://linkedin.com/in/fabiandietenberger"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Visit my LinkedIn profile"
+              />
+            }
           >
-            <Link
-              href="https://linkedin.com/in/fabiandietenberger"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Visit my LinkedIn profile"
-            >
-              <LinkedInIcon className="h-5 w-5" aria-hidden="true" />
-            </Link>
+            <LinkedInIcon className="h-5 w-5" aria-hidden="true" />
           </Button>
           <Button
+            nativeButton={false}
             variant="outline"
             size="icon"
             className="rounded-full bg-transparent"
-            asChild
+            render={
+              <Link
+                href="https://github.com/feedm3"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Visit my GitHub profile"
+              />
+            }
           >
-            <Link
-              href="https://github.com/feedm3"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Visit my GitHub profile"
-            >
-              <GithubLogo className="h-5 w-5" aria-hidden="true" />
-            </Link>
+            <GithubLogo className="h-5 w-5" aria-hidden="true" />
           </Button>
         </div>
       </div>
