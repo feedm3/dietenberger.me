@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(pnpm run:*)"
+      "Bash(pnpm run:*)",
+      "Bash(npm run build:*)",
+      "Bash(npx shadcn@latest add:*)"
     ]
   }
 }

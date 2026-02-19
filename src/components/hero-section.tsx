@@ -23,15 +23,12 @@ export function HeroSection() {
           Fabian Dietenberger
         </h1>
         <p className="text-muted-foreground md:text-xl">
-          Engineering Manager | Senior Software Developer
+          I build products and lead engineering teams.
         </p>
         <p className="max-w-[800px] text-lg text-gray-700 dark:text-gray-300">
-          Engineering Manager and Senior Software Developer with 10+ years of
-          experience leading large-scale enterprise web projects. A pragmatic
-          problem solver and team player, passionate about building
-          high-performing teams and delivering impactful solutions.
-          <br />
-          Based in{' '}
+          10+ years of shipping enterprise web projects for companies like Audi,
+          BMW, and FC Bayern Munich. I lead teams, write code, and care about
+          both — from architecture decisions to deployment pipelines. Based in{' '}
           <Link
             href="https://maps.app.goo.gl/LhDyAWfBpNCYnjqeA"
             target="_blank"
@@ -54,7 +51,7 @@ export function HeroSection() {
               title="Send me an email"
             >
               <Mail className="h-5 w-5" aria-hidden="true" />
-              <span>Let's connect</span>
+              <span>Get in touch</span>
             </Link>
           </Button>
           <Button
