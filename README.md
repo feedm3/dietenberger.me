@@ -2,9 +2,14 @@
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# install tooling 
+mise install
+
+# install dependencies
+pnpm install
+
+# run dev server
 pnpm dev
 ```
 
