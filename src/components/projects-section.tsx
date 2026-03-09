@@ -51,6 +51,19 @@ export async function ProjectsSection() {
             href="https://www.kisslegg.app/"
           />
           <ProjectCard
+            title="DriveBeats"
+            description="Stream your MP3 collection straight from Google Drive. Favorites, playlists, and full playback control — no uploads, no syncing, all in the browser."
+            tech={[
+              'Next.js',
+              'TypeScript',
+              'Zustand',
+              'shadcn/ui',
+              'Tailwind',
+              'Google Drive API',
+            ]}
+            href="https://drivebeats.dietenberger.me/"
+          />
+          <ProjectCard
             title="Sippe Gwzdone"
             description="No more spreadsheets for group expenses. Everyone sees purchases, balances, and debts the moment they're added."
             tech={['React', 'TypeScript', 'Vite', 'Zustand', 'MUI', 'Firebase']}
