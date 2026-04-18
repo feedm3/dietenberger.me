@@ -1,10 +1,48 @@
 import { Mail } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { ReactNode } from 'react';
 import { GithubLogo } from '@/assets/github-logo';
 import { LinkedInIcon } from '@/assets/linked-in-logo';
 import ProfilePicture from '@/assets/profi-picture-laughing.jpg';
 import { Button } from '@/components/ui/button';
+
+type IconLinkProps = {
+  href: string;
+  title: string;
+  variant?: 'default' | 'outline';
+  size?: 'default' | 'icon';
+  className?: string;
+  children: ReactNode;
+};
+
+function IconLink({
+  href,
+  title,
+  variant = 'outline',
+  size = 'icon',
+  className = 'rounded-full bg-transparent',
+  children,
+}: IconLinkProps) {
+  return (
+    <Button
+      nativeButton={false}
+      variant={variant}
+      size={size}
+      className={className}
+      render={
+        <Link
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={title}
+        />
+      }
+    >
+      {children}
+    </Button>
+  );
+}
 
 export function HeroSection() {
   return (
@@ -40,53 +78,28 @@ export function HeroSection() {
           .
         </p>
         <div className="flex gap-4 mt-6">
-          <Button
-            nativeButton={false}
+          <IconLink
+            href="mailto:fabian@dietenberger.me"
+            title="Send me an email"
+            variant="default"
+            size="default"
             className="rounded-full px-4 py-2 flex items-center gap-2"
-            render={
-              <Link
-                href="mailto:fabian@dietenberger.me"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Send me an email"
-              />
-            }
           >
             <Mail className="h-5 w-5" aria-hidden="true" />
             <span>Get in touch</span>
-          </Button>
-          <Button
-            nativeButton={false}
-            variant="outline"
-            size="icon"
-            className="rounded-full bg-transparent"
-            render={
-              <Link
-                href="https://linkedin.com/in/fabiandietenberger"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Visit my LinkedIn profile"
-              />
-            }
+          </IconLink>
+          <IconLink
+            href="https://linkedin.com/in/fabiandietenberger"
+            title="Visit my LinkedIn profile"
           >
             <LinkedInIcon className="h-5 w-5" aria-hidden="true" />
-          </Button>
-          <Button
-            nativeButton={false}
-            variant="outline"
-            size="icon"
-            className="rounded-full bg-transparent"
-            render={
-              <Link
-                href="https://github.com/feedm3"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Visit my GitHub profile"
-              />
-            }
+          </IconLink>
+          <IconLink
+            href="https://github.com/feedm3"
+            title="Visit my GitHub profile"
           >
             <GithubLogo className="h-5 w-5" aria-hidden="true" />
-          </Button>
+          </IconLink>
         </div>
       </div>
     </section>

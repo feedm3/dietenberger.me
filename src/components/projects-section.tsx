@@ -9,10 +9,16 @@ async function getContributions(): Promise<Activity[]> {
       'https://github-contributions-api.jogruber.de/v4/feedm3?y=last',
       { next: { revalidate: 86400 } },
     );
-    if (!res.ok) return [];
+    if (!res.ok) {
+      console.error(
+        `GitHub contributions fetch failed: ${res.status} ${res.statusText}`,
+      );
+      return [];
+    }
     const data = await res.json();
     return data.contributions;
-  } catch {
+  } catch (err) {
+    console.error('GitHub contributions fetch threw', err);
     return [];
   }
 }
