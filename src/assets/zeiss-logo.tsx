@@ -8,6 +8,7 @@ export const ZeissLogo = (props: SVGProps<SVGSVGElement>) => (
     role="graphics-symbol"
     {...props}
   >
+    <title>ZEISS</title>
     <g>
       <path
         fill="currentColor"

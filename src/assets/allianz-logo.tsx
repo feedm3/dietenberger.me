@@ -9,6 +9,7 @@ export const AllianzLogo = (props: SVGProps<SVGSVGElement>) => (
     role="graphics-symbol"
     {...props}
   >
+    <title>Allianz</title>
     <path
       fillRule="evenodd"
       clipRule="evenodd"

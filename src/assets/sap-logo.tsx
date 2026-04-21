@@ -9,6 +9,7 @@ export const SapLogo = (props: SVGProps<SVGSVGElement>) => (
     role="graphics-symbol"
     {...props}
   >
+    <title>SAP</title>
     <g xmlns="http://www.w3.org/2000/svg">
       <path
         className="st0"

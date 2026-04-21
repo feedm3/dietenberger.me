@@ -10,6 +10,11 @@
     "ignoreUnknown": false,
     "includes": ["src/**"]
   },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
   "linter": {
     "enabled": true,
     "rules": {

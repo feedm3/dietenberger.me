@@ -9,6 +9,7 @@ export const AdacMotorsportLogo = (props: SVGProps<SVGSVGElement>) => (
     role="graphics-symbol"
     {...props}
   >
+    <title>ADAC Motorsport</title>
     <g clipPath="url(#08-adac_svg__a)">
       <path
         fill="currentColor"

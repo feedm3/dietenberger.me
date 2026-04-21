@@ -75,6 +75,20 @@ export async function ProjectsSection() {
             tech={['React', 'TypeScript', 'Vite', 'Zustand', 'MUI', 'Firebase']}
             href="https://sippegwzdone.de/"
           />
+          <ProjectCard
+            title="Abfallkalender"
+            description="Never miss bin day again. Every pickup date for your address in Landkreis Ravensburg, all in one place."
+            tech={[
+              'Next.js',
+              'TypeScript',
+              'Firebase',
+              'Neon',
+              'Trigger.dev',
+              'Tailwind',
+              'Vercel',
+            ]}
+            href="https://abfallkalender.dietenberger.me/"
+          />
         </div>
       </div>
     </section>
