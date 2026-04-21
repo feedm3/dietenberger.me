@@ -7,7 +7,7 @@ import { SkillsSection } from '@/components/skills-section';
 export default function Home() {
   return (
     <div>
-      <main className="flex flex-col min-h-screen bg-background text-foreground">
+      <main className="flex flex-col min-h-dvh isolate bg-background text-foreground">
         <HeroSection />
         <SkillsSection />
         <ClientsSection />

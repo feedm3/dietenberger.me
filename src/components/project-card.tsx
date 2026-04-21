@@ -23,7 +23,7 @@ export function ProjectCard({
   href,
 }: ProjectCardProps) {
   const card = (
-    <Card className="h-full transition-shadow hover:shadow-lg">
+    <Card className="h-full transition-shadow hover:shadow-lg dark:hover:shadow-none">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <h3>{title}</h3>

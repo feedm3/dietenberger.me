@@ -46,24 +46,24 @@ function IconLink({
 
 export function HeroSection() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 text-center bg-gradient-to-b from-muted to-background">
-      <div className="container mx-auto px-4 md:px-6 flex flex-col items-center space-y-6">
+    <section className="w-full py-12 md:py-24 lg:py-32 text-center bg-linear-to-b from-muted to-background dark:from-background">
+      <div className="container mx-auto px-4 md:px-6 flex flex-col items-center gap-6">
         <Image
           src={ProfilePicture}
           width={200}
           height={200}
           alt="Fabian Dietenberger portrait"
-          className="rounded-full object-cover border-4 border-primary shadow-lg"
+          className="rounded-full object-cover shadow-xl ring-1 ring-foreground/10 dark:shadow-none dark:ring-white/10"
           priority
           placeholder="blur"
         />
-        <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none">
+        <h1 className="text-4xl font-semibold tracking-tight text-balance sm:text-5xl md:text-6xl lg:text-7xl">
           Fabian Dietenberger
         </h1>
-        <p className="text-muted-foreground md:text-xl">
+        <p className="text-muted-foreground md:text-xl text-pretty">
           I build products and lead engineering teams.
         </p>
-        <p className="max-w-[800px] text-lg text-gray-700 dark:text-gray-300">
+        <p className="max-w-[60ch] text-lg text-foreground/80 text-pretty">
           10+ years of shipping enterprise web projects for companies like Audi,
           BMW, and FC Bayern Munich. I lead teams, write code, and care about
           both — from architecture decisions to deployment pipelines. Based in{' '}
@@ -72,12 +72,13 @@ export function HeroSection() {
             target="_blank"
             rel="noopener noreferrer"
             title="Visit Kißlegg on Google Maps"
+            className="underline underline-offset-4 decoration-foreground/40 hover:decoration-foreground transition-colors"
           >
             Kißlegg, Germany
           </Link>
           .
         </p>
-        <div className="flex gap-4 mt-6">
+        <div className="flex gap-4 mt-2">
           <IconLink
             href="mailto:fabian@dietenberger.me"
             title="Send me an email"

@@ -8,15 +8,19 @@ interface SkillsCardProps {
 
 export const SkillsCard = (props: SkillsCardProps): React.JSX.Element => {
   return (
-    <Card className="hover:shadow-lg transition-shadow gap-4">
+    <Card className="hover:shadow-lg dark:hover:shadow-none transition-shadow gap-4">
       <CardHeader>
         <CardTitle>{props.title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <ul className="space-y-2 text-muted-foreground">
+        {/* biome-ignore lint/a11y/noRedundantRoles: role="list" restores VoiceOver semantics when list-style is removed via Tailwind preflight */}
+        <ul className="flex flex-col gap-2 text-foreground/80" role="list">
           {props.skills.map((skill) => (
             <li className="flex items-center gap-2" key={skill}>
-              <span className="w-1 h-1 bg-current rounded-full"></span>
+              <span
+                aria-hidden="true"
+                className="size-1 bg-muted-foreground rounded-full shrink-0"
+              />
               {skill}
             </li>
           ))}
