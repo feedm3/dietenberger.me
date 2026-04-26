@@ -1,26 +1,26 @@
 name: Dependabot Automerge
 
 on:
-  pull_request_target:
-    types: [opened, synchronize, reopened, ready_for_review]
   workflow_run:
-    workflows: [Dependabot Validation]
+    workflows: [Test]
     types: [completed]
   status:
 
 permissions:
   checks: read
   contents: write
-  issues: write
   pull-requests: write
   statuses: read
 
 concurrency:
-  group: dependabot-automerge-${{ github.event.pull_request.number || github.event.workflow_run.id || github.event.sha }}
+  group: dependabot-automerge-${{ github.event.workflow_run.id || github.event.sha }}
   cancel-in-progress: true
 
 jobs:
   automerge:
+    if: >-
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
+      || (github.event_name == 'status' && github.event.context == 'Vercel')
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -29,18 +29,13 @@ jobs:
         id: pr
         env:
           GH_TOKEN: ${{ github.token }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha || github.event.sha }}
         run: |
           set -euo pipefail
 
-          pr_number=""
-
-          if [[ "${{ github.event_name }}" == "pull_request_target" ]]; then
-            pr_number="${{ github.event.pull_request.number }}"
-          elif [[ "${{ github.event_name }}" == "workflow_run" ]]; then
-            pr_number="$(gh api -H 'Accept: application/vnd.github+json' repos/${GITHUB_REPOSITORY}/commits/${{ github.event.workflow_run.head_sha }}/pulls --jq 'map(select(.state == "open"))[0].number // empty')"
-          elif [[ "${{ github.event_name }}" == "status" ]]; then
-            pr_number="$(gh api -H 'Accept: application/vnd.github+json' repos/${GITHUB_REPOSITORY}/commits/${{ github.event.sha }}/pulls --jq 'map(select(.state == "open"))[0].number // empty')"
-          fi
+          pr_number="$(gh api -H 'Accept: application/vnd.github+json' \
+            "repos/${GITHUB_REPOSITORY}/commits/${HEAD_SHA}/pulls" \
+            --jq 'map(select(.state == "open"))[0].number // empty')"
 
           echo "number=${pr_number}" >> "$GITHUB_OUTPUT"
 
@@ -53,69 +48,30 @@ jobs:
         run: |
           set -euo pipefail
 
-          pr_json="$(gh api repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER})"
+          pr_json="$(gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}")"
           state="$(echo "$pr_json" | jq -r '.state')"
           draft="$(echo "$pr_json" | jq -r '.draft')"
           author="$(echo "$pr_json" | jq -r '.user.login')"
           head_sha="$(echo "$pr_json" | jq -r '.head.sha')"
 
           echo "ready=false" >> "$GITHUB_OUTPUT"
-          echo "comment=false" >> "$GITHUB_OUTPUT"
+          echo "head_sha=${head_sha}" >> "$GITHUB_OUTPUT"
 
           if [[ "$state" != "open" || "$draft" != "false" || "$author" != "dependabot[bot]" ]]; then
             exit 0
           fi
 
-          vercel_state="$(gh api repos/${GITHUB_REPOSITORY}/commits/${head_sha}/status --jq '([.statuses[] | select(.context == "Vercel")] | sort_by(.created_at) | last | .state) // empty')"
-          validation_state="$(gh api -H 'Accept: application/vnd.github+json' repos/${GITHUB_REPOSITORY}/commits/${head_sha}/check-runs --jq '([.check_runs[] | select(.name == "validation")] | sort_by(.started_at) | last | .conclusion) // empty')"
+          vercel_state="$(gh api "repos/${GITHUB_REPOSITORY}/commits/${head_sha}/status" \
+            --jq '([.statuses[] | select(.context == "Vercel")] | max_by(.id) | .state) // empty')"
+          validation_state="$(gh api -H 'Accept: application/vnd.github+json' \
+            "repos/${GITHUB_REPOSITORY}/commits/${head_sha}/check-runs" \
+            --jq '([.check_runs[] | select(.name == "validation")] | max_by(.id) | .conclusion) // empty')"
+
+          echo "validation=${validation_state:-missing}"
+          echo "vercel=${vercel_state:-missing}"
 
           if [[ "$vercel_state" == "success" && "$validation_state" == "success" ]]; then
             echo "ready=true" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-
-          failed=false
-          if [[ "$vercel_state" == "failure" || "$vercel_state" == "error" ]]; then
-            failed=true
-          fi
-          if [[ "$validation_state" == "failure" || "$validation_state" == "cancelled" || "$validation_state" == "timed_out" || "$validation_state" == "action_required" ]]; then
-            failed=true
-          fi
-
-          if [[ "$failed" != "true" ]]; then
-            exit 0
-          fi
-
-          comment_file="$RUNNER_TEMP/dependabot-automerge-comment.md"
-          printf '%s\n' \
-            '<!-- dependabot-automerge-failure -->' \
-            'Automerge is blocked because a required check failed.' \
-            '' \
-            "- \`validation\`: \`${validation_state:-missing}\`" \
-            "- \`Vercel\`: \`${vercel_state:-missing}\`" \
-            '' \
-            'This PR needs manual review.' > "$comment_file"
-
-          echo "comment=true" >> "$GITHUB_OUTPUT"
-          echo "comment_file=$comment_file" >> "$GITHUB_OUTPUT"
-
-      - name: Comment on failure
-        if: steps.gates.outputs.comment == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          PR_NUMBER: ${{ steps.pr.outputs.number }}
-          COMMENT_FILE: ${{ steps.gates.outputs.comment_file }}
-        run: |
-          set -euo pipefail
-
-          comment_id="$(gh api repos/${GITHUB_REPOSITORY}/issues/${PR_NUMBER}/comments --paginate --jq '.[] | select(.body | contains("<!-- dependabot-automerge-failure -->")) | .id' | tail -n 1)"
-          body_json="$RUNNER_TEMP/dependabot-automerge-comment.json"
-          jq -n --rawfile body "$COMMENT_FILE" '{body: $body}' > "$body_json"
-
-          if [[ -n "$comment_id" ]]; then
-            gh api --method PATCH repos/${GITHUB_REPOSITORY}/issues/comments/${comment_id} --input "$body_json" >/dev/null
-          else
-            gh api --method POST repos/${GITHUB_REPOSITORY}/issues/${PR_NUMBER}/comments --input "$body_json" >/dev/null
           fi
 
       - name: Merge pull request
@@ -123,4 +79,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ steps.pr.outputs.number }}
-        run: gh pr merge "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --rebase
+          HEAD_SHA: ${{ steps.gates.outputs.head_sha }}
+        run: |
+          gh pr merge "$PR_NUMBER" \
+            --repo "$GITHUB_REPOSITORY" \
+            --rebase \
+            --delete-branch \
+            --match-head-commit "$HEAD_SHA"
