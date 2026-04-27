@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "biome check --write",
-    "test:types": "tsc --noEmit"
+    "test:types": "next typegen && tsc --noEmit"
   },
   "dependencies": {
     "@base-ui/react": "^1.4.0",
