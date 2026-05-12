@@ -66,7 +66,8 @@ export function HeroSection() {
         <p className="max-w-[60ch] text-lg text-foreground/80 text-pretty">
           10+ years of shipping enterprise web projects for companies like Audi,
           BMW, and FC Bayern Munich. I lead teams, write code, and care about
-          both — from architecture decisions to deployment pipelines. Based in{' '}
+          everything from architecture decisions to deployment pipelines. Based
+          in{' '}
           <Link
             href="https://maps.app.goo.gl/LhDyAWfBpNCYnjqeA"
             target="_blank"

@@ -44,7 +44,7 @@ export async function ProjectsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
           <ProjectCard
             title="Kisslegg App"
-            description="Everything a small town needs in one app. AI assistant, events, restaurants, waste schedules, and the local newspaper — built for the municipality of Kißlegg."
+            description="Everything a small town needs in one app. AI assistant, events, restaurants, waste schedules, and the local newspaper. Built for the municipality of Kißlegg."
             tech={[
               'Next.js',
               'TypeScript',
@@ -58,7 +58,7 @@ export async function ProjectsSection() {
           />
           <ProjectCard
             title="DriveBeats"
-            description="Stream your MP3 collection straight from Google Drive. Favorites, playlists, and full playback control — no uploads, no syncing, all in the browser."
+            description="Stream your MP3 collection straight from Google Drive. Favorites, playlists, and full playback control. No uploads, no syncing, all in the browser."
             tech={[
               'Next.js',
               'TypeScript',
@@ -88,6 +88,12 @@ export async function ProjectsSection() {
               'Vercel',
             ]}
             href="https://abfallkalender.dietenberger.me/"
+          />
+          <ProjectCard
+            title="Aktive Naturschule Allgäu"
+            description="Learning with head, heart, and hand, indoors and outdoors. Vision, founding team, pedagogy, and an income-based tuition calculator. Built for a new nature school near Kißlegg."
+            tech={['Next.js', 'TypeScript', 'Tailwind', 'Vercel']}
+            href="https://www.aktive-naturschule-allgaeu.de"
           />
         </div>
       </div>
