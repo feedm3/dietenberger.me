@@ -79,12 +79,7 @@ export function ProjectCard({
 
   if (href) {
     return (
-      <Link
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={title}
-      >
+      <Link href={href} target="_blank" rel="noopener" aria-label={title}>
         {card}
       </Link>
     );
