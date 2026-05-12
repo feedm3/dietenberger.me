@@ -32,7 +32,7 @@ const projects: ProjectCardProps[] = [
       'Tailwind',
       'Google Drive API',
     ],
-    href: 'https://drivebeats.dietenberger.me/',
+    href: 'https://www.drivebeats.app/',
     start: '2026-03',
   },
   {
@@ -56,7 +56,7 @@ const projects: ProjectCardProps[] = [
       'Tailwind',
       'Vercel',
     ],
-    href: 'https://abfallkalender.dietenberger.me/',
+    href: 'https://www.abfallkalender-rv.de',
     start: '2026-02',
   },
   {

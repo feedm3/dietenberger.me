@@ -49,23 +49,23 @@ export function ProjectCard({
   const card = (
     <Card className="h-full transition-shadow hover:shadow-lg dark:hover:shadow-none">
       <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-          <h3>{title}</h3>
-          {href && (
-            <ExternalLink
-              className="size-4 text-muted-foreground"
-              aria-hidden="true"
-            />
-          )}
-        </CardTitle>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-xs tracking-wide text-muted-foreground uppercase tabular-nums">
           <time dateTime={start}>{formatMonth(start)}</time>
           {' – '}
           {end ? <time dateTime={end}>{formatMonth(end)}</time> : 'present'}
         </p>
+        <CardTitle className="flex items-center gap-2">
+          <h3>{title}</h3>
+          {href && (
+            <ExternalLink
+              className="size-4 shrink-0 text-muted-foreground"
+              aria-hidden="true"
+            />
+          )}
+        </CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="mt-auto">
         <div className="flex flex-wrap gap-2">
           {tech.map((t) => (
             <Badge key={t} variant="secondary">
