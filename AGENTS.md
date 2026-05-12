@@ -1,22 +1,10 @@
 # Personal website
 
-This is my personal website.
+Package manager: **pnpm**. After changes run `pnpm lint` (Biome, autofixes) and `pnpm test:types`.
 
-## Commands
+- Stage changes with `git add .` (never `git -C <path> add .`).
+- Add a shadcn/ui component: `pnpm dlx shadcn@latest add [name]`.
 
-Package manager: **pnpm**
+## Updating the projects ("After Hours" section)
 
-```bash
-pnpm lint          # Biome linter/formatter (always run after changes)
-pnpm test:types    # TypeScript type check
-pnpm build         # Production build
-```
-
-## Essentials
-
-- Path alias: `@/*` maps to `src/*`
-- Files: kebab-case (`home-page.tsx`). Use `import type` for type-only imports.
-- Server Components by default. `'use client'` only for state, browser APIs, or event handlers.
-- After completing a task: always stage changes with exactly `git add .` (never use absolute paths like `git -C <path> add .`).
-- Aim for elegant solutions by default, but don't gold-plate simple fixes.
-- Add new shadcn/ui components: `pnpm dlx shadcn@latest add [name]`
+Projects are `<ProjectCard>` entries in `src/components/projects-section.tsx` (`title`, `description`, `tech[]`, `href`). `project-repos.local.json` (repo root, gitignored / local-only) maps each project to its source repo on disk — skip silently if absent. To refresh: per repo derive `tech[]` from `package.json` deps, `description` from README + recent `git log`, confirm `href`; then edit `projects-section.tsx`.
