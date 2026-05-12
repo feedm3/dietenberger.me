@@ -9,11 +9,33 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 
-interface ProjectCardProps {
+export interface ProjectCardProps {
   title: string;
   description: string;
   tech: string[];
   href?: string;
+  start: string;
+  end?: string;
+}
+
+const MONTHS = [
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+  'May',
+  'Jun',
+  'Jul',
+  'Aug',
+  'Sep',
+  'Oct',
+  'Nov',
+  'Dec',
+];
+
+function formatMonth(value: string): string {
+  const [year, month] = value.split('-');
+  return `${MONTHS[Number(month) - 1]} ${year}`;
 }
 
 export function ProjectCard({
@@ -21,6 +43,8 @@ export function ProjectCard({
   description,
   tech,
   href,
+  start,
+  end,
 }: ProjectCardProps) {
   const card = (
     <Card className="h-full transition-shadow hover:shadow-lg dark:hover:shadow-none">
@@ -34,6 +58,11 @@ export function ProjectCard({
             />
           )}
         </CardTitle>
+        <p className="text-sm text-muted-foreground">
+          <time dateTime={start}>{formatMonth(start)}</time>
+          {' – '}
+          {end ? <time dateTime={end}>{formatMonth(end)}</time> : 'present'}
+        </p>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
       <CardContent>

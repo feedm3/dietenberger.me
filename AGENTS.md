@@ -7,4 +7,4 @@ Package manager: **pnpm**. After changes run `pnpm lint` (Biome, autofixes) and 
 
 ## Updating the projects ("After Hours" section)
 
-Projects are `<ProjectCard>` entries in `src/components/projects-section.tsx` (`title`, `description`, `tech[]`, `href`). `project-repos.local.json` (repo root, gitignored / local-only) maps each project to its source repo on disk — skip silently if absent. To refresh: per repo derive `tech[]` from `package.json` deps, `description` from README + recent `git log`, confirm `href`; then edit `projects-section.tsx`.
+`projects` array in `src/components/projects-section.tsx` (sorted by `start` desc). Each entry: `title`, `description`, `tech[]`, `href`, `start` (`"YYYY-MM"`), `end` (optional `"YYYY-MM"`, omit if ongoing). `project-repos.local.json` (gitignored, local-only) maps each project to its repo on disk — if present, derive `tech[]` / `description` / `start` (= first commit month) from there; if absent, skip.
