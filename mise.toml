@@ -1,3 +1,4 @@
 [tools]
 node = "24"
-pnpm = "11.1.0"
+# Keep in sync with the packageManager pnpm version in package.json.
+pnpm = "11.1.2"

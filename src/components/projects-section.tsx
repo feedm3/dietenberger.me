@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import type { Activity } from 'react-activity-calendar';
 import { GithubCalendar } from '@/components/github-calendar';
 import { ProjectCard, type ProjectCardProps } from '@/components/project-card';
@@ -89,6 +90,8 @@ async function getContributions(): Promise<Activity[]> {
   }
 }
 
+const githubUrl = 'https://github.com/feedm3';
+
 export async function ProjectsSection() {
   const contributions = await getContributions();
   const sortedProjects = [...projects].sort((a, b) =>
@@ -115,6 +118,20 @@ export async function ProjectsSection() {
             <ProjectCard key={project.title} {...project} />
           ))}
         </div>
+
+        <p className="mt-10 text-center text-sm text-muted-foreground text-balance">
+          Want to see more? Everything else I build and experiment with lives on{' '}
+          <Link
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Visit my GitHub profile"
+            className="font-medium text-foreground underline underline-offset-4 hover:text-foreground"
+          >
+            my GitHub
+          </Link>
+          .
+        </p>
       </div>
     </section>
   );

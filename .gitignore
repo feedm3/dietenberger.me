@@ -42,3 +42,4 @@ next-env.d.ts
 
 # local-only project→repo mapping
 project-repos.local.json
+/.claude/settings.local.json
