@@ -1,3 +1,4 @@
+import { CareerSection } from '@/components/career-section';
 import { ClientsSection } from '@/components/clients-section';
 import { Footer } from '@/components/footer';
 import { HeroSection } from '@/components/hero-section';
@@ -11,6 +12,7 @@ export default function Home() {
         <HeroSection />
         <SkillsSection />
         <ClientsSection />
+        <CareerSection />
         <ProjectsSection />
       </main>
       <Footer />

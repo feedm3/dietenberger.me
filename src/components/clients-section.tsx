@@ -13,7 +13,7 @@ export function ClientsSection() {
     <section className="w-full py-12 md:py-24 lg:py-32">
       <div className="container mx-auto px-4 md:px-6">
         <h2 className="text-3xl font-semibold tracking-tight text-balance text-center sm:text-4xl md:text-5xl">
-          Clients I&apos;ve Worked With
+          Clients
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-8 gap-y-12 mt-12 items-center justify-center">
           <Link

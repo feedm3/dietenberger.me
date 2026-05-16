@@ -8,6 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { formatMonth } from '@/lib/format-month';
 
 export interface ProjectCardProps {
   title: string;
@@ -16,26 +17,6 @@ export interface ProjectCardProps {
   href?: string;
   start: string;
   end?: string;
-}
-
-const MONTHS = [
-  'Jan',
-  'Feb',
-  'Mar',
-  'Apr',
-  'May',
-  'Jun',
-  'Jul',
-  'Aug',
-  'Sep',
-  'Oct',
-  'Nov',
-  'Dec',
-];
-
-function formatMonth(value: string): string {
-  const [year, month] = value.split('-');
-  return `${MONTHS[Number(month) - 1]} ${year}`;
 }
 
 export function ProjectCard({
