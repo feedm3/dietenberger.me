@@ -1,11 +1,9 @@
 import { Mail } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
-import FamilyPicture from '@/assets/family-easter-egg.jpg';
 import { GithubLogo } from '@/assets/github-logo';
 import { LinkedInIcon } from '@/assets/linked-in-logo';
-import ProfilePicture from '@/assets/profi-picture-laughing.jpg';
+import { FamilyEasterEgg } from '@/components/family-easter-egg';
 import { Button } from '@/components/ui/button';
 
 type IconLinkProps = {
@@ -49,28 +47,7 @@ export function HeroSection() {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 text-center bg-linear-to-b from-muted to-background dark:from-background">
       <div className="container mx-auto px-4 md:px-6 flex flex-col items-center gap-6">
-        {/* Easter egg: hover the avatar and a tilted polaroid of me holding my son springs out */}
-        <div className="group relative h-[200px] w-[200px]">
-          <Image
-            src={ProfilePicture}
-            width={200}
-            height={200}
-            alt="Fabian Dietenberger portrait"
-            className="rounded-full object-cover shadow-xl ring-1 ring-foreground/10 transition-transform duration-300 group-hover:-rotate-3 dark:shadow-none dark:ring-white/10"
-            priority
-            placeholder="blur"
-          />
-          <div className="pointer-events-none absolute -top-8 -right-10 origin-bottom-left rotate-6 scale-0 rounded-md bg-white p-2 pb-6 opacity-0 shadow-2xl ring-1 ring-black/5 transition-all duration-300 ease-out group-hover:scale-100 group-hover:opacity-100 motion-reduce:transition-none dark:bg-zinc-100">
-            <Image
-              src={FamilyPicture}
-              width={112}
-              height={112}
-              alt="Fabian holding his son by a lake"
-              className="h-28 w-28 rounded-sm object-cover"
-              placeholder="blur"
-            />
-          </div>
-        </div>
+        <FamilyEasterEgg />
         <h1 className="text-4xl font-semibold tracking-tight text-balance sm:text-5xl md:text-6xl lg:text-7xl">
           Fabian Dietenberger
         </h1>
