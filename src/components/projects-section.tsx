@@ -126,7 +126,7 @@ export async function ProjectsSection() {
             target="_blank"
             rel="noopener noreferrer"
             title="Visit my GitHub profile"
-            className="font-medium text-foreground underline underline-offset-4 hover:text-foreground"
+            className="font-medium text-foreground underline underline-offset-4 decoration-foreground/40 hover:decoration-foreground transition-colors"
           >
             my GitHub
           </Link>
