@@ -7,6 +7,11 @@ updates:
       day: 'monday'
       time: '06:00'
       timezone: 'Europe/Berlin'
+    # mirror pnpm's 24h `minimumReleaseAge` supply-chain gate so PRs don't
+    # open before a release clears the cooldown (CI would reject them).
+    # Day-granular, so 1 day is the closest match to pnpm's 24h.
+    cooldown:
+      default-days: 1
     # one PR for all updates
     groups:
       npm-dependencies:
