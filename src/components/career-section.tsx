@@ -8,6 +8,13 @@ interface CareerEntry {
   end?: string;
 }
 
+interface CareerGroup {
+  company: string;
+  entries: CareerEntry[];
+  start: string;
+  end?: string;
+}
+
 const entries: CareerEntry[] = [
   {
     title: 'Business Unit Director',
@@ -51,10 +58,55 @@ const sortedEntries = [...entries].sort((a, b) =>
   b.start.localeCompare(a.start),
 );
 
-function companyLabel(entry: CareerEntry): string {
-  return entry.descriptor
-    ? `${entry.company} · ${entry.descriptor}`
-    : entry.company;
+// Group consecutive roles at the same company (entries are sorted start desc,
+// so the first entry in a group is the most recent). The group spans from the
+// earliest role's start to the most recent role's end.
+const groups: CareerGroup[] = sortedEntries.reduce<CareerGroup[]>(
+  (acc, entry) => {
+    const last = acc[acc.length - 1];
+    if (last && last.company === entry.company) {
+      last.entries.push(entry);
+      last.start = entry.start;
+    } else {
+      acc.push({
+        company: entry.company,
+        entries: [entry],
+        start: entry.start,
+        end: entry.end,
+      });
+    }
+    return acc;
+  },
+  [],
+);
+
+const mono = 'font-[family-name:var(--font-geist-mono)]';
+
+function DateRange({ start, end }: { start: string; end?: string }) {
+  return (
+    <>
+      <time dateTime={start}>{formatMonth(start)}</time>
+      {' – '}
+      {end ? <time dateTime={end}>{formatMonth(end)}</time> : 'present'}
+    </>
+  );
+}
+
+// Break a two-part company name after its "/" or "&" separator so the second
+// organization sits on its own line (e.g. "SinnerSchrader / Accenture
+// Interactive", "SAP SE & DHBW").
+function CompanyName({ name }: { name: string }) {
+  const match = name.match(/^(.*[/&])\s+(.*)$/);
+  if (!match) {
+    return name;
+  }
+  return (
+    <>
+      {match[1]}
+      <br />
+      {match[2]}
+    </>
+  );
 }
 
 export function CareerSection() {
@@ -65,28 +117,35 @@ export function CareerSection() {
           Career
         </h2>
 
-        <ol className="mx-auto mt-12 max-w-2xl divide-y divide-border">
-          {sortedEntries.map((entry) => (
+        <ul className="mx-auto mt-12 max-w-3xl divide-y divide-border">
+          {groups.map((group) => (
             <li
-              key={`${entry.company}-${entry.start}`}
-              className="flex flex-col gap-1 py-5 first:pt-0 last:pb-0 sm:flex-row sm:items-baseline sm:gap-8"
+              key={`${group.company}-${group.start}`}
+              className="grid gap-2 py-6 first:pt-0 last:pb-0 sm:grid-cols-[13rem_1fr] sm:gap-10"
             >
-              <p className="shrink-0 text-xs tracking-wide text-muted-foreground uppercase tabular-nums sm:w-44">
-                <time dateTime={entry.start}>{formatMonth(entry.start)}</time>
-                {' – '}
-                {entry.end ? (
-                  <time dateTime={entry.end}>{formatMonth(entry.end)}</time>
-                ) : (
-                  'present'
-                )}
-              </p>
-              <div>
-                <h3 className="font-medium">{entry.title}</h3>
-                <p className="text-muted-foreground">{companyLabel(entry)}</p>
-              </div>
+              <h3 className="self-start text-lg font-semibold">
+                <CompanyName name={group.company} />
+              </h3>
+              <ol className="space-y-4">
+                {group.entries.map((entry) => (
+                  <li key={entry.start}>
+                    <p className="font-medium">{entry.title}</p>
+                    <p
+                      className={`${mono} mt-0.5 text-sm text-muted-foreground`}
+                    >
+                      <DateRange start={entry.start} end={entry.end} />
+                    </p>
+                    {entry.descriptor ? (
+                      <p className="mt-1 text-sm text-muted-foreground">
+                        {entry.descriptor}
+                      </p>
+                    ) : null}
+                  </li>
+                ))}
+              </ol>
             </li>
           ))}
-        </ol>
+        </ul>
       </div>
     </section>
   );
