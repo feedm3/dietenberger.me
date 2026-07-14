@@ -17,3 +17,10 @@ updates:
       npm-dependencies:
         patterns:
           - "*"
+    ignore:
+      # TypeScript 7 is the native (Go) compiler and ships as platform
+      # binaries; current stable Next.js build tooling can't detect it and
+      # the build fails (see vercel/next.js#95685). Hold on 6.x until stable
+      # TypeScript 7 support lands, then drop this ignore.
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
