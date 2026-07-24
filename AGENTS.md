@@ -2,7 +2,7 @@
 
 Package manager: **pnpm**. After changes run `pnpm lint` (Biome, autofixes) and `pnpm test:types`.
 
-- Stage changes with `git add .` (never `git -C <path> add .`).
+- Stage only the paths changed for the task (for example, `git add -- path/to/file ...`). Do not stage unrelated user changes.
 - Add a shadcn/ui component: `pnpm dlx shadcn@latest add [name]`.
 
 ## Updating the projects ("After Hours" section)
