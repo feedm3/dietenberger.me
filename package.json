@@ -2,7 +2,7 @@
   "name": "dietenberger.me",
   "version": "1.0.0",
   "private": true,
-  "packageManager": "pnpm@11.1.2",
+  "packageManager": "pnpm@11.20.0",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
