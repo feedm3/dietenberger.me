@@ -24,7 +24,7 @@ const projects: ProjectCardProps[] = [
   {
     title: 'DriveBeats',
     description:
-      'Stream your music collection straight from Google Drive. Sync playlists and favorites across devices, or download tracks for offline listening—without re-uploading your library.',
+      'Stream your music collection straight from Google Drive. Sync playlists and favorites across devices, or download tracks for offline listening. No need to re-upload your library.',
     tech: [
       'Next.js',
       'TypeScript',
