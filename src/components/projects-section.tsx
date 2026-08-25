@@ -24,7 +24,7 @@ const projects: ProjectCardProps[] = [
   {
     title: 'DriveBeats',
     description:
-      'Stream your MP3 collection straight from Google Drive. Favorites, playlists, and full playback control. No uploads, no syncing, all in the browser.',
+      'Stream your music collection straight from Google Drive. Sync playlists and favorites across devices, or download tracks for offline listening—without re-uploading your library.',
     tech: [
       'Next.js',
       'TypeScript',
@@ -39,7 +39,7 @@ const projects: ProjectCardProps[] = [
   {
     title: 'Sippe Gwzdone',
     description:
-      "No more spreadsheets for group expenses. Everyone sees purchases, balances, and debts the moment they're added.",
+      'I built this for my friends: it tracks shared expenses and balances, scores darts games, and runs Flunkyball tournaments.',
     tech: ['React', 'TypeScript', 'Vite', 'Zustand', 'MUI', 'Firebase'],
     href: 'https://sippegwzdone.de/',
     start: '2021-03',
