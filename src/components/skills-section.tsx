@@ -25,7 +25,7 @@ export function SkillsSection() {
               'Database Design & Optimization',
               'Microservices & Scalable Architecture',
               'System Integration & Third-Party APIs',
-              'Performance & Security Best Practices',
+              'Application Performance & Security',
             ]}
           />
           <SkillsCard
@@ -34,38 +34,28 @@ export function SkillsSection() {
               'Cloud Platform Management (Azure, AWS)',
               'CI/CD Pipeline Implementation',
               'Containerization & Deployment (Docker)',
-              'Automated Testing & Quality Assurance',
+              'Automated Testing in CI/CD',
               'Infrastructure Cost Optimization',
             ]}
           />
           <SkillsCard
             title="AI & Innovation"
             skills={[
+              'Agentic Engineering Across the Development Lifecycle',
               'Building AI-Powered Features with LLMs',
               'RAG Pipelines & Prompt Engineering',
               'AI Agent Development & Tool Integration',
               'Evaluating & Adopting Emerging Tech',
-              'Prototyping New Product Ideas',
             ]}
           />
           <SkillsCard
-            title="Team Leadership & Management"
+            title="Technical Leadership"
             skills={[
-              'Engineering Team Leadership',
-              'Agile Project Management & Delivery',
-              'Cross-Functional Team Collaboration',
-              'Talent Development & Mentoring',
-              'Stakeholder Communication & Reporting',
-            ]}
-          />
-          <SkillsCard
-            title="Business & Operations"
-            skills={[
-              'Client Communication & Requirements Workshops',
-              'Budget Ownership & Resource Planning',
-              'Vendor Evaluation & Contract Negotiation',
-              'KPI Tracking & Team Performance Reviews',
-              'Risk Management & Incident Response',
+              'Architecture Direction Across Teams',
+              'Hands-On Technical Decision-Making',
+              'Technical Delivery & Risk Management',
+              'Mentoring Engineers',
+              'Client Requirements Workshops',
             ]}
           />
         </div>

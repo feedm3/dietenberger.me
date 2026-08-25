@@ -52,13 +52,14 @@ export function HeroSection() {
           Fabian Dietenberger
         </h1>
         <p className="text-muted-foreground md:text-xl text-pretty">
-          I build products and lead engineering teams.
+          I build products and shape technical direction.
         </p>
         <p className="max-w-[60ch] text-lg text-foreground/80 text-pretty">
-          10+ years of shipping enterprise web projects for companies like Audi,
-          BMW, and FC Bayern Munich. I lead teams, write code, and care about
-          everything from architecture decisions to deployment pipelines. Based
-          in{' '}
+          10+ years shipping enterprise web platforms for companies including
+          Audi, BMW and FC Bayern Munich. I stay hands-on in code across
+          frontend, backend, CI/CD and production infrastructure while shaping
+          architecture across teams. Agentic engineering is part of how I work
+          throughout the development lifecycle. Based in{' '}
           <Link
             href="https://maps.app.goo.gl/LhDyAWfBpNCYnjqeA"
             target="_blank"

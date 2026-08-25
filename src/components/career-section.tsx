@@ -19,7 +19,7 @@ const entries: CareerEntry[] = [
   {
     title: 'Business Unit Director',
     company: 'Satellytes',
-    descriptor: 'hands-on staff engineer',
+    descriptor: 'Hands-on Technical Lead / Software Architect',
     start: '2022-11',
   },
   {
