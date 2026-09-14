@@ -3,7 +3,6 @@ import { formatMonth } from '@/lib/format-month';
 interface CareerEntry {
   title: string;
   company: string;
-  descriptor?: string;
   start: string;
   end?: string;
 }
@@ -17,9 +16,8 @@ interface CareerGroup {
 
 const entries: CareerEntry[] = [
   {
-    title: 'Business Unit Director',
+    title: 'Staff Engineer',
     company: 'Satellytes',
-    descriptor: 'Hands-on Technical Lead / Software Architect',
     start: '2022-11',
   },
   {
@@ -135,11 +133,6 @@ export function CareerSection() {
                     >
                       <DateRange start={entry.start} end={entry.end} />
                     </p>
-                    {entry.descriptor ? (
-                      <p className="mt-1 text-sm text-muted-foreground">
-                        {entry.descriptor}
-                      </p>
-                    ) : null}
                   </li>
                 ))}
               </ol>
