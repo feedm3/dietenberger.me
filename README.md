@@ -1,9 +1,11 @@
 # dietenberger.me
 
-## Getting Started
+Source of [www.dietenberger.me](https://www.dietenberger.me), the personal portfolio of Fabian Dietenberger.
+
+## Getting started
 
 ```bash
-# install tooling 
+# install tooling
 mise install
 
 # install dependencies
@@ -13,4 +15,8 @@ pnpm install
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Deployment
+
+Deployed on [Vercel](https://vercel.com). Every pull request gets a preview deployment.
