@@ -42,7 +42,7 @@ export function FamilyEasterEgg() {
         height={200}
         alt="Fabian Dietenberger portrait"
         className="rounded-full object-cover shadow-xl ring-1 ring-foreground/10 transition-transform duration-300 group-hover:-rotate-3 group-data-open:-rotate-3 dark:shadow-none dark:ring-white/10"
-        priority
+        fetchPriority="high"
         placeholder="blur"
       />
       <div className="pointer-events-none absolute -top-12 -left-10 origin-bottom-right -rotate-6 scale-0 rounded-md bg-white p-2 pb-6 opacity-0 shadow-2xl ring-1 ring-black/5 transition-all delay-75 duration-300 ease-out group-hover:scale-100 group-hover:opacity-100 group-data-open:scale-100 group-data-open:opacity-100 motion-reduce:transition-none sm:-left-16 dark:bg-zinc-100 dark:shadow-none">

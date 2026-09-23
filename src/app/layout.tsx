@@ -13,10 +13,9 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
-const siteTitle =
-  'Fabian Dietenberger - Engineering Manager & Senior Software Developer';
+const siteTitle = 'Fabian Dietenberger - Staff Engineer';
 const siteDescription =
-  'Engineering Manager and Senior Software Developer with 10+ years experience. Specialized in React, TypeScript, Node.js, AI-powered applications, and team leadership. Based in Kißlegg, Germany.';
+  'Staff Engineer with 10+ years experience. Specialized in React, TypeScript, Node.js, AI-powered applications, and team leadership. Based in Kißlegg, Germany.';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.dietenberger.me'),
@@ -46,7 +45,13 @@ const personJsonLd = {
   '@type': 'Person',
   name: 'Fabian Dietenberger',
   url: 'https://www.dietenberger.me',
-  jobTitle: 'Engineering Manager & Senior Software Developer',
+  email: 'mailto:fabian@dietenberger.me',
+  jobTitle: 'Staff Engineer',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Satellytes',
+    url: 'https://satellytes.com',
+  },
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Kißlegg',

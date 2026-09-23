@@ -1,4 +1,5 @@
-import { formatMonth } from '@/lib/format-month';
+import { DateRange } from '@/components/date-range';
+import { Section } from '@/components/section';
 
 interface CareerEntry {
   title: string;
@@ -78,18 +79,6 @@ const groups: CareerGroup[] = sortedEntries.reduce<CareerGroup[]>(
   [],
 );
 
-const mono = 'font-[family-name:var(--font-geist-mono)]';
-
-function DateRange({ start, end }: { start: string; end?: string }) {
-  return (
-    <>
-      <time dateTime={start}>{formatMonth(start)}</time>
-      {' – '}
-      {end ? <time dateTime={end}>{formatMonth(end)}</time> : 'present'}
-    </>
-  );
-}
-
 // Break a two-part company name after its "/" or "&" separator so the second
 // organization sits on its own line (e.g. "SinnerSchrader / Accenture
 // Interactive", "SAP SE & DHBW").
@@ -109,37 +98,31 @@ function CompanyName({ name }: { name: string }) {
 
 export function CareerSection() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
-      <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl font-semibold tracking-tight text-balance text-center sm:text-4xl md:text-5xl">
-          Career
-        </h2>
-
-        <ul className="mx-auto mt-12 max-w-3xl divide-y divide-border">
-          {groups.map((group) => (
-            <li
-              key={`${group.company}-${group.start}`}
-              className="grid gap-2 py-6 first:pt-0 last:pb-0 sm:grid-cols-[13rem_1fr] sm:gap-10"
-            >
-              <h3 className="self-start text-lg font-semibold">
-                <CompanyName name={group.company} />
-              </h3>
-              <ol className="space-y-4">
-                {group.entries.map((entry) => (
-                  <li key={entry.start}>
-                    <p className="font-medium">{entry.title}</p>
-                    <p
-                      className={`${mono} mt-0.5 text-sm text-muted-foreground`}
-                    >
-                      <DateRange start={entry.start} end={entry.end} />
-                    </p>
-                  </li>
-                ))}
-              </ol>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
+    <Section id="career" title="Career" className="bg-muted">
+      <ul className="mx-auto mt-12 max-w-3xl divide-y divide-border">
+        {groups.map((group) => (
+          <li
+            key={`${group.company}-${group.start}`}
+            className="grid gap-2 py-6 first:pt-0 last:pb-0 sm:grid-cols-[13rem_1fr] sm:gap-10"
+          >
+            <h3 className="self-start text-lg font-semibold">
+              <CompanyName name={group.company} />
+            </h3>
+            <ol className="space-y-4">
+              {group.entries.map((entry) => (
+                <li key={entry.start}>
+                  <p className="font-medium">{entry.title}</p>
+                  <DateRange
+                    start={entry.start}
+                    end={entry.end}
+                    className="mt-0.5"
+                  />
+                </li>
+              ))}
+            </ol>
+          </li>
+        ))}
+      </ul>
+    </Section>
   );
 }

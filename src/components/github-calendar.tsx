@@ -52,7 +52,7 @@ export function GithubCalendar({ data }: GithubCalendarProps) {
             showColorLegend={false}
             showTotalCount={false}
             theme={{
-              light: ['#e5e7eb', '#9be9a8', '#40c463', '#30a14e', '#216e39'],
+              light: ['#e7e5e4', '#9be9a8', '#40c463', '#30a14e', '#216e39'],
               dark: ['#2a2a2a', '#0e4429', '#006d32', '#26a641', '#39d353'],
             }}
             style={{ color: 'var(--color-muted-foreground)' }}

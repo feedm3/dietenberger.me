@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Activity } from 'react-activity-calendar';
 import { GithubCalendar } from '@/components/github-calendar';
 import { ProjectCard, type ProjectCardProps } from '@/components/project-card';
+import { Section } from '@/components/section';
 import { Card, CardContent } from '@/components/ui/card';
 
 const projects: ProjectCardProps[] = [
@@ -99,40 +100,34 @@ export async function ProjectsSection() {
   );
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32">
-      <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl font-semibold tracking-tight text-center text-balance sm:text-4xl md:text-5xl">
-          After Hours
-        </h2>
+    <Section id="projects" title="After Hours">
+      {contributions.length > 0 && (
+        <Card className="mt-12">
+          <CardContent>
+            <GithubCalendar data={contributions} />
+          </CardContent>
+        </Card>
+      )}
 
-        {contributions.length > 0 && (
-          <Card className="mt-12">
-            <CardContent>
-              <GithubCalendar data={contributions} />
-            </CardContent>
-          </Card>
-        )}
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-          {sortedProjects.map((project) => (
-            <ProjectCard key={project.title} {...project} />
-          ))}
-        </div>
-
-        <p className="mt-10 text-center text-sm text-muted-foreground text-balance">
-          Want to see more? Everything else I build and experiment with lives on{' '}
-          <Link
-            href={githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Visit my GitHub profile"
-            className="font-medium text-foreground underline underline-offset-4 decoration-foreground/40 hover:decoration-foreground transition-colors"
-          >
-            my GitHub
-          </Link>
-          .
-        </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        {sortedProjects.map((project) => (
+          <ProjectCard key={project.title} {...project} />
+        ))}
       </div>
-    </section>
+
+      <p className="mt-10 text-center text-sm text-muted-foreground text-balance">
+        Want to see more? Everything else I build and experiment with lives on{' '}
+        <Link
+          href={githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Visit my GitHub profile"
+          className="font-medium text-foreground underline underline-offset-4 decoration-foreground/40 hover:decoration-foreground transition-colors"
+        >
+          my GitHub
+        </Link>
+        .
+      </p>
+    </Section>
   );
 }

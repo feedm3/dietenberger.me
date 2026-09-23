@@ -1,3 +1,4 @@
+import { Section } from '@/components/section';
 import { SkillsCard } from '@/components/skills-card';
 
 const expertise = [
@@ -46,21 +47,16 @@ const expertise = [
 
 export function SkillsSection() {
   return (
-    <section className="w-full bg-muted py-12 md:py-24 lg:py-32">
-      <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-center text-3xl font-semibold tracking-tight text-balance sm:text-4xl md:text-5xl">
-          Expertise
-        </h2>
-        <div className="mx-auto mt-12 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2">
-          {expertise.map((area) => (
-            <SkillsCard
-              key={area.title}
-              title={area.title}
-              skills={area.skills}
-            />
-          ))}
-        </div>
+    <Section id="expertise" title="Expertise" className="bg-muted">
+      <div className="mx-auto mt-12 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2">
+        {expertise.map((area) => (
+          <SkillsCard
+            key={area.title}
+            title={area.title}
+            skills={area.skills}
+          />
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }

@@ -8,6 +8,7 @@ import { BmwLogo } from '@/assets/bmw-logo';
 import { FcBayernLogo } from '@/assets/fc-bayern-logo';
 import { SapLogo } from '@/assets/sap-logo';
 import { ZeissLogo } from '@/assets/zeiss-logo';
+import { Section } from '@/components/section';
 
 interface Client {
   name: string;
@@ -69,27 +70,22 @@ const clients: Client[] = [
 
 export function ClientsSection() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32">
-      <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl font-semibold tracking-tight text-balance text-center sm:text-4xl md:text-5xl">
-          Clients
-        </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-8 gap-y-12 mt-12 items-center justify-center">
-          {clients.map(({ name, href, title, Logo }) => (
-            <Link
-              key={name}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              title={title}
-              className="block rounded-md opacity-80 transition-opacity hover:opacity-100"
-            >
-              <Logo className="p-2 w-full" aria-hidden="true" />
-              <span className="sr-only">{name}</span>
-            </Link>
-          ))}
-        </div>
+    <Section id="clients" title="Worked With">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-8 gap-y-12 mt-12 items-center justify-center">
+        {clients.map(({ name, href, title, Logo }) => (
+          <Link
+            key={name}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={title}
+            className="block rounded-md opacity-80 transition-opacity hover:opacity-100"
+          >
+            <Logo className="p-2 w-full" aria-hidden="true" />
+            <span className="sr-only">{name}</span>
+          </Link>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }

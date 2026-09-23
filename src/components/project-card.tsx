@@ -1,5 +1,6 @@
 import { ExternalLink } from 'lucide-react';
 import Link from 'next/link';
+import { DateRange } from '@/components/date-range';
 import { Badge } from '@/components/ui/badge';
 import {
   Card,
@@ -8,7 +9,6 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { formatMonth } from '@/lib/format-month';
 
 export interface ProjectCardProps {
   title: string;
@@ -27,22 +27,32 @@ export function ProjectCard({
   start,
   end,
 }: ProjectCardProps) {
-  const card = (
-    <Card className="h-full transition-shadow hover:shadow-lg dark:hover:shadow-none">
+  return (
+    <Card className="relative h-full transition-shadow has-[a:hover]:shadow-lg has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-ring dark:has-[a:hover]:shadow-none">
       <CardHeader>
-        <p className="text-xs tracking-wide text-muted-foreground uppercase tabular-nums">
-          <time dateTime={start}>{formatMonth(start)}</time>
-          {' – '}
-          {end ? <time dateTime={end}>{formatMonth(end)}</time> : 'present'}
-        </p>
-        <CardTitle className="flex items-center gap-2">
-          <h3>{title}</h3>
-          {href && (
-            <ExternalLink
-              className="size-4 shrink-0 text-muted-foreground"
-              aria-hidden="true"
-            />
-          )}
+        <DateRange start={start} end={end} />
+        <CardTitle>
+          <h3>
+            {href ? (
+              // The link's overlay stretches over the whole card, so the
+              // entire card is clickable while the link name stays the title.
+              <Link
+                href={href}
+                target="_blank"
+                rel="noopener"
+                className="flex items-center gap-2 outline-none after:absolute after:inset-0"
+              >
+                {title}
+                <ExternalLink
+                  className="size-4 shrink-0 text-muted-foreground"
+                  aria-hidden="true"
+                />
+                <span className="sr-only">(opens in a new tab)</span>
+              </Link>
+            ) : (
+              title
+            )}
+          </h3>
         </CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
@@ -57,14 +67,4 @@ export function ProjectCard({
       </CardContent>
     </Card>
   );
-
-  if (href) {
-    return (
-      <Link href={href} target="_blank" rel="noopener" aria-label={title}>
-        {card}
-      </Link>
-    );
-  }
-
-  return card;
 }
