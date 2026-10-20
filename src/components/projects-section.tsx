@@ -7,29 +7,41 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const projects: ProjectCardProps[] = [
   {
-    title: 'Kisslegg App',
+    title: 'Leutkirch App',
     description:
-      'Everything a small town needs in one app. AI assistant, events, restaurants, waste schedules, and the local newspaper. Built for the municipality of Kißlegg.',
+      'An independent city app for Leutkirch im Allgäu. Local news, events, restaurants, waste schedules, and an AI assistant, plus the community newspaper to read or listen to.',
     tech: [
       'Next.js',
       'TypeScript',
       'Mastra AI',
-      'Trigger.dev',
+      'Neon',
+      'Web Push',
+      'Vercel Workflows',
       'shadcn/ui',
       'Tailwind',
       'Vercel',
     ],
-    href: 'https://www.kisslegg.app/',
-    start: '2025-05',
+    href: 'https://leutkirch.dietenberger.me/',
+    start: '2026-10',
+  },
+  {
+    title: 'Aktive Naturschule Allgäu',
+    description:
+      'A website for a new nature school taking shape in the Allgäu. Introduces the educational approach and founding team, with admissions information, an income-based tuition calculator, and open teaching positions.',
+    tech: ['Next.js', 'TypeScript', 'Tailwind', 'Vercel'],
+    href: 'https://www.aktive-naturschule-allgaeu.de',
+    start: '2026-04',
   },
   {
     title: 'DriveBeats',
     description:
-      'Stream your music collection straight from Google Drive. Sync playlists and favorites across devices, or download tracks for offline listening. No need to re-upload your library.',
+      'Stream your music collection straight from Google Drive. Sync playlists and favorites across devices, download tracks for offline listening, or control playback through compatible AI assistants.',
     tech: [
       'Next.js',
       'TypeScript',
       'Zustand',
+      'Neon',
+      'WebMCP',
       'shadcn/ui',
       'Tailwind',
       'Google Drive API',
@@ -38,23 +50,16 @@ const projects: ProjectCardProps[] = [
     start: '2026-03',
   },
   {
-    title: 'Sippe Gwzdone',
-    description:
-      'I built this for my friends: it tracks shared expenses and balances, scores darts games, and runs Flunkyball tournaments.',
-    tech: ['React', 'TypeScript', 'Vite', 'Zustand', 'MUI', 'Firebase'],
-    href: 'https://sippegwzdone.de/',
-    start: '2021-03',
-  },
-  {
     title: 'Abfallkalender',
     description:
-      'Never miss bin day again. Every pickup date for your address in Landkreis Ravensburg, all in one place.',
+      'Waste collection dates for your street in Landkreis Ravensburg, with optional reminders before pickup. Free to use in the browser, with no account required.',
     tech: [
       'Next.js',
       'TypeScript',
       'Firebase',
       'Neon',
-      'Trigger.dev',
+      'Vercel Workflows',
+      'WebMCP',
       'Tailwind',
       'Vercel',
     ],
@@ -62,12 +67,29 @@ const projects: ProjectCardProps[] = [
     start: '2026-02',
   },
   {
-    title: 'Aktive Naturschule Allgäu',
+    title: 'Kißlegg App',
     description:
-      'Learning with head, heart, and hand, indoors and outdoors. Vision, founding team, pedagogy, and an income-based tuition calculator. Built for a new nature school near Kißlegg.',
-    tech: ['Next.js', 'TypeScript', 'Tailwind', 'Vercel'],
-    href: 'https://www.aktive-naturschule-allgaeu.de',
-    start: '2026-04',
+      'Everything a small town needs in one app. News, events, restaurants, waste schedules, fuel prices, and an AI assistant. Read the community newspaper or listen to its AI-generated podcast. Built for residents of Kißlegg.',
+    tech: [
+      'Next.js',
+      'TypeScript',
+      'Mastra AI',
+      'Neon',
+      'Vercel Workflows',
+      'shadcn/ui',
+      'Tailwind',
+      'Vercel',
+    ],
+    href: 'https://www.kisslegg.app/',
+    start: '2025-05',
+  },
+  {
+    title: 'Sippe Gwzdone',
+    description:
+      'I built this for my friends: it tracks shared expenses and balances, organizes recurring cabin duties, scores darts games, and runs Flunkyball tournaments.',
+    tech: ['React', 'TypeScript', 'Vite', 'Zustand', 'MUI', 'Firebase'],
+    href: 'https://sippegwzdone.de/',
+    start: '2021-03',
   },
 ];
 
