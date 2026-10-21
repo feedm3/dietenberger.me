@@ -22,10 +22,16 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
+      - name: Read package manager
+        id: package-manager
+        run: jq -r '"version=\(.packageManager)"' package.json >> "$GITHUB_OUTPUT"
+
       - name: Setup mise
         uses: jdx/mise-action@v2
         with:
+          version: 2026.10.15
           cache: true
+          cache_key_prefix: mise-v1-${{ steps.package-manager.outputs.version }}
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile

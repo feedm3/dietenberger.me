@@ -1,4 +1,5 @@
+[settings]
+idiomatic_version_file_enable_tools = ["pnpm"]
+
 [tools]
 node = "24"
-# Keep in sync with the packageManager pnpm version in package.json.
-pnpm = "12.7.0"
