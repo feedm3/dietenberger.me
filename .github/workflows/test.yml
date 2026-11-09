@@ -27,7 +27,7 @@ jobs:
         run: jq -r '"version=\(.packageManager)"' package.json >> "$GITHUB_OUTPUT"
 
       - name: Setup mise
-        uses: jdx/mise-action@v4
+        uses: jdx/mise-action@v5
         with:
           version: 2026.10.15
           cache: true
